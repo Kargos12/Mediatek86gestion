@@ -1278,5 +1278,71 @@ namespace Mediatek86.vue
 
         #endregion
 
+        #region Commande de livres
+        //-----------------------------------------------------------
+        // ONGLET "Commandes de livres"
+        //-----------------------------------------------------------
+
+        /// <summary>
+        /// Recherche les informations du livre dont le numéro à été renseigné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRechercheLivreCommandeLivres_Click(object sender, EventArgs e)
+        {
+            if (!txtNumeroCommandeLivres.Text.Equals(""))
+            {
+                Livre livre = lesLivres.Find(x => x.Id.Equals(txtNumeroCommandeLivres.Text.Trim()));
+                if (livre != null)
+                {
+                    AfficheInfosLivreCommandeLivres(livre);
+
+                }
+                else
+                {
+                    MessageBox.Show("Aucun livre portant le numéro " + txtNumeroCommandeLivres.Text + " n'a été trouvé");
+                    txtNumeroCommandeLivres.Text = "";
+                    txtNumeroCommandeLivres.Focus();
+                    VideInfoLivre();
+                }
+            }
+            else
+            {
+                VideInfoLivre();
+            }
+        }
+
+        /// <summary>
+        /// Affichage des informations du livre sélectionné
+        /// </summary>
+        /// <param name="revue"></param>
+        private void AfficheInfosLivreCommandeLivres(Livre livre)
+        {
+            // informations sur le livre
+            txtTitreCommandeLivres.Text = livre.Titre;
+            txtAuteurCommandeLivres.Text = livre.Auteur;
+            txtCollectionCommandeLivres.Text = livre.Collection;
+            txtGenreCommandeLivres.Text = livre.Genre;
+            txtPublicCommandeLivres.Text = livre.Public;
+            txtRayonCommandeLivres.Text = livre.Rayon;
+            txtCheminImgCommandeLivres.Text = livre.Image;
+            txtISBNCommandeLivres.Text = livre.Isbn;
+        }
+
+        /// <summary>
+        /// Réinitialise les info du livre
+        /// </summary>
+        private void VideInfoLivre()
+        {
+            txtTitreCommandeLivres.Text = "";
+            txtAuteurCommandeLivres.Text = "";
+            txtCollectionCommandeLivres.Text = "";
+            txtGenreCommandeLivres.Text = "";
+            txtPublicCommandeLivres.Text = "";
+            txtRayonCommandeLivres.Text = "";
+            txtCheminImgCommandeLivres.Text = "";
+            txtISBNCommandeLivres.Text = "";
+        }
+        #endregion
     }
 }
