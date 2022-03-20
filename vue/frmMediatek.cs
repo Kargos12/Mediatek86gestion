@@ -5,6 +5,9 @@ using Mediatek86.metier;
 using Mediatek86.controleur;
 using System.Drawing;
 using System.Linq;
+using System.Data;
+using MySql.Data.MySqlClient;
+using Mediatek86.dal;
 
 namespace Mediatek86.vue
 {
@@ -23,11 +26,20 @@ namespace Mediatek86.vue
         private readonly BindingSource bdgRayons = new BindingSource();
         private readonly BindingSource bdgRevuesListe = new BindingSource();
         private readonly BindingSource bdgExemplairesListe = new BindingSource();
+        /// <summary>
+        /// Objet pour gérer la liste des commandes de livres
+        /// </summary>
+        private readonly BindingSource bdgLivresListeCommandeLivres = new BindingSource();
+        private readonly CommandeLivres commandeLivres;
         private List<Livre> lesLivres = new List<Livre>();
         private List<Dvd> lesDvd = new List<Dvd>();
         private List<Revue> lesRevues = new List<Revue>();
         private List<Exemplaire> lesExemplaires = new List<Exemplaire>();
-
+        private string etapescmd;
+        private string numCommandeLivre;
+        private int nbCommandeLivre;
+        private double montantCommandeLivre;
+        private DateTime dtCommandeLivre;
         #endregion
 
 
@@ -173,14 +185,14 @@ namespace Mediatek86.vue
             txbRevuesGenre.Text = revue.Genre;
             txbRevuesPublic.Text = revue.Public;
             txbRevuesRayon.Text = revue.Rayon;
-            txbRevuesTitre.Text = revue.Titre;     
+            txbRevuesTitre.Text = revue.Titre;
             string image = revue.Image;
             try
             {
                 pcbRevuesImage.Image = Image.FromFile(image);
             }
-            catch 
-            { 
+            catch
+            {
                 pcbRevuesImage.Image = null;
             }
         }
@@ -470,7 +482,7 @@ namespace Mediatek86.vue
             else
             {
                 // si la zone de saisie est vide et aucun élément combo sélectionné, réaffichage de la liste complète
-                if (cbxLivresGenres.SelectedIndex < 0 && cbxLivresPublics.SelectedIndex < 0 && cbxLivresRayons.SelectedIndex < 0 
+                if (cbxLivresGenres.SelectedIndex < 0 && cbxLivresPublics.SelectedIndex < 0 && cbxLivresRayons.SelectedIndex < 0
                     && txbLivresNumRecherche.Text.Equals(""))
                 {
                     RemplirLivresListeComplete();
@@ -492,13 +504,13 @@ namespace Mediatek86.vue
             txbLivresGenre.Text = livre.Genre;
             txbLivresPublic.Text = livre.Public;
             txbLivresRayon.Text = livre.Rayon;
-            txbLivresTitre.Text = livre.Titre;      
+            txbLivresTitre.Text = livre.Titre;
             string image = livre.Image;
             try
             {
                 pcbLivresImage.Image = Image.FromFile(image);
             }
-            catch 
+            catch
             {
                 pcbLivresImage.Image = null;
             }
@@ -805,7 +817,7 @@ namespace Mediatek86.vue
             txbDvdRealisateur.Text = dvd.Realisateur;
             txbDvdSynopsis.Text = dvd.Synopsis;
             txbDvdImage.Text = dvd.Image;
-            txbDvdDuree.Text = dvd.Duree.ToString() ;
+            txbDvdDuree.Text = dvd.Duree.ToString();
             txbDvdNumero.Text = dvd.Id;
             txbDvdGenre.Text = dvd.Genre;
             txbDvdPublic.Text = dvd.Public;
@@ -816,7 +828,7 @@ namespace Mediatek86.vue
             {
                 pcbDvdImage.Image = Image.FromFile(image);
             }
-            catch 
+            catch
             {
                 pcbDvdImage.Image = null;
             }
@@ -1097,13 +1109,13 @@ namespace Mediatek86.vue
             txbReceptionRevueGenre.Text = revue.Genre;
             txbReceptionRevuePublic.Text = revue.Public;
             txbReceptionRevueRayon.Text = revue.Rayon;
-            txbReceptionRevueTitre.Text = revue.Titre;         
+            txbReceptionRevueTitre.Text = revue.Titre;
             string image = revue.Image;
             try
             {
                 pcbReceptionRevueImage.Image = Image.FromFile(image);
             }
-            catch 
+            catch
             {
                 pcbReceptionRevueImage.Image = null;
             }
@@ -1176,12 +1188,12 @@ namespace Mediatek86.vue
             {
                 filePath = openFileDialog.FileName;
             }
-            txbReceptionExemplaireImage.Text = filePath;         
+            txbReceptionExemplaireImage.Text = filePath;
             try
             {
                 pcbReceptionExemplaireImage.Image = Image.FromFile(filePath);
             }
-            catch 
+            catch
             {
                 pcbReceptionExemplaireImage.Image = null;
             }
@@ -1213,7 +1225,8 @@ namespace Mediatek86.vue
                     {
                         MessageBox.Show("numéro de publication déjà existant", "Erreur");
                     }
-                }catch
+                }
+                catch
                 {
                     MessageBox.Show("le numéro de parution doit être numérique", "Information");
                     txbReceptionExemplaireNumero.Text = "";
@@ -1280,11 +1293,37 @@ namespace Mediatek86.vue
 
         #region Commande de livres
         //-----------------------------------------------------------
-        // ONGLET "Commandes de livres"
+        // ONGLET "Commande de livres"
         //-----------------------------------------------------------
 
         /// <summary>
+        /// Ouverture de l'onglet Commande de livres : 
+        /// initialise le champ de date de commande à la date du jour
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabCommandeLivres_Enter(object sender, EventArgs e)
+        {
+            dtpCommandeLivres.Value = DateTime.Today;
+        }
+
+        /// <summary>
+        /// Affiche les Commandes de livres
+        /// </summary>
+        public void RemplirListeCommandeLivres()
+        {
+            List<CommandeLivres> lesCommandeLivres = controle.GetLesCommandeLivres();
+            bdgLivresListeCommandeLivres.DataSource = lesCommandeLivres;
+            dgvLivresListeCommandeLivres.DataSource = bdgLivresListeCommandeLivres;
+            ////    dgvLivresListeCommandeLivres.Columns["id"].Visible = false;
+            dgvLivresListeCommandeLivres.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+
+        /// <summary>
         /// Recherche les informations du livre dont le numéro à été renseigné
+        /// Si le numéro n'est pas trouvé : message d'erreur
+        /// Si le numéro est trouver : affiche les infos du livre et affiche le panneau de commande
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1296,13 +1335,16 @@ namespace Mediatek86.vue
                 if (livre != null)
                 {
                     AfficheInfosLivreCommandeLivres(livre);
-
+                    RemplirListeCommandeLivres();
+                    gpbNouvelleCommandeCommandeLivres.Visible = true;
+                    grbModificationCommandeLivres.Visible = true;
                 }
                 else
                 {
                     MessageBox.Show("Aucun livre portant le numéro " + txtNumeroCommandeLivres.Text + " n'a été trouvé");
                     txtNumeroCommandeLivres.Text = "";
                     txtNumeroCommandeLivres.Focus();
+                    gpbNouvelleCommandeCommandeLivres.Visible = false;
                     VideInfoLivre();
                 }
             }
@@ -1343,6 +1385,206 @@ namespace Mediatek86.vue
             txtCheminImgCommandeLivres.Text = "";
             txtISBNCommandeLivres.Text = "";
         }
+
+        /// <summary>
+        /// Clique sur le bouton pour annuler la commande en cours :
+        /// Vide les champs et cache la date de commande
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAnnulerCommandeLivres_Click(object sender, EventArgs e)
+        {
+            dtpCommandeLivres.Value = DateTime.Today;
+            nudNbCommandeLivres.Value = 0;
+            nudMontantCommandeLivres.Value = 0;
+            lblDateCommandeLivre.Visible = false;
+            dtpCommandeLivres.Visible = false;
+        }
+
+        /// <summary>
+        /// Clique sur le bouton de validation de commande :
+        /// vérifie si le nombre d'examplaires et le montant ne sont pas égaux à 0
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnValiderCommandeLivres_Click(object sender, EventArgs e)
+        {
+            if (txtbrefCommandeLivres.Text == "")
+            {
+                MessageBox.Show("La commande doit avoir une référence");
+                txtbrefCommandeLivres.Focus();
+            }
+            else if (nudNbCommandeLivres.Value == 0)
+            {
+                MessageBox.Show("La commande doit contenir au moins un exemplaire");
+                nudNbCommandeLivres.Focus();
+            }
+            else if (nudMontantCommandeLivres.Value == 0)
+            {
+                MessageBox.Show("Le montant ne peux être égal à 0");
+                nudMontantCommandeLivres.Focus();
+            }
+            else
+            {
+                lblDateCommandeLivre.Visible = true;
+                dtpCommandeLivres.Visible = true;
+                numCommandeLivre = txtbrefCommandeLivres.Text;
+                nbCommandeLivre = (int)nudNbCommandeLivres.Value;
+                montantCommandeLivre = (double)nudMontantCommandeLivres.Value;
+                dtCommandeLivre = dtpCommandeLivres.Value;
+                etapescmd = "en cours";
+                CommandeLivres commandeLivres = new CommandeLivres(numCommandeLivre, nbCommandeLivre, montantCommandeLivre, dtCommandeLivre, etapescmd);
+                controle.AddCommandeLivres(commandeLivres);
+            }
+
+        }
+        /// <summary>
+        /// Clique sur le bouton pour mettre la commande selectionnée au statut en cours
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnStatutCommandeLivresRelance_Click(object sender, EventArgs e)
+        {
+            if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
+            {
+                CommandeLivres commandeLivres = (CommandeLivres)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
+                /// la commande ne peux être relancée que si elle est en cours
+                if (commandeLivres.Etapes == "en cours")
+                {
+                    /// envoi du statut "4" qui correspond à "en cours"
+                    commandeLivres.Etapes = "4";
+                    /// envoi l'id de la commande selectionnée
+                    commandeLivres.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
+                    controle.UpdateEtapes(commandeLivres);
+                    RemplirListeCommandeLivres();
+                    MessageBox.Show("La commande a bien été relancée");
+                }
+                else
+                {
+                    if (commandeLivres.Etapes == "relancée")
+                    {
+                        MessageBox.Show("La commande a déjà été relancée", "Information");
+                    }
+                    else if (commandeLivres.Etapes == "livrée")
+                    {
+                        MessageBox.Show("La commande ne peux pas être relancée, celle-ci a été livrée", "Information");
+                    }
+                    else if (commandeLivres.Etapes == "réglée")
+                    {
+                        MessageBox.Show("Le statut de la commande ne peux pas être changé, celle-ci a été livrée et réglée", "Information");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez selectionner une ligne", "Information");
+            }
+        }
+        /// <summary>
+        /// Clique sur le bouton pour mettre la commande selectionnée au statut livrée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnStatutCommandeLivresLivree_Click(object sender, EventArgs e)
+        {
+            if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
+            {
+                CommandeLivres commandeLivres = (CommandeLivres)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
+                /// la commande peux être mise au statut livrée que si elle est en cours ou relancée
+                if (commandeLivres.Etapes == "en cours" || commandeLivres.Etapes == "relancée")
+                {
+                    /// envoi du statut "2" qui correspond à "en relancée"
+                    commandeLivres.Etapes = "2";
+                    /// envoi l'id de la commande selectionnée
+                    commandeLivres.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
+                    controle.UpdateEtapes(commandeLivres);
+                    RemplirListeCommandeLivres();
+                    MessageBox.Show("La commande a bien été notée comme livrée", "Information");
+                }
+                else
+                {
+                    if (commandeLivres.Etapes == "livrée")
+                    {
+                        MessageBox.Show("La commande est déjà notée comme étant livrée", "Information");
+                    }
+                    else if (commandeLivres.Etapes == "réglée")
+                    {
+                        MessageBox.Show("Le statut de la commande ne peux pas être changé, celle-ci a été livrée et réglée", "Information");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez selectionner une ligne", "Information");
+            }
+        }
+        /// <summary>
+        /// Clique sur le bouton pour mettre la commande selectionnée au statut réglée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnStatutCommandeLivresReglee_Click(object sender, EventArgs e)
+        {
+            if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
+            {
+                CommandeLivres commandeLivres = (CommandeLivres)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
+                /// la commande ne peux être notée réglée que si elle a été livrée
+                if (commandeLivres.Etapes == "livrée")
+                {
+                    /// envoi du statut "3" qui correspond à "en reglée"
+                    commandeLivres.Etapes = "3";
+                    /// envoi l'id de la commande selectionnée
+                    commandeLivres.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
+                    controle.UpdateEtapes(commandeLivres);
+                    RemplirListeCommandeLivres();
+                    MessageBox.Show("La commande a bien été notée comme reglée", "Information");
+                }
+                else
+                {
+                    if (commandeLivres.Etapes == "réglée")
+                    {
+                        MessageBox.Show("La commande est déjà notée comme étant réglée", "Information");
+                    }
+                    else if (commandeLivres.Etapes == "en cours" || commandeLivres.Etapes == "relancée")
+                    {
+                        MessageBox.Show("La commande ne peux pas être notée réglée : elle n'a pas été livrée", "Information");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez selectionner une ligne", "Information");
+            }
+        }
+        /// <summary>
+        /// Clique sur le bouton pour supprimer la commande selectionnée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnStatutCommandeLivresSupprimer_Click(object sender, EventArgs e)
+        {
+            CommandeLivres commandeLivres = (CommandeLivres)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
+            if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
+            {
+                if (commandeLivres.Etapes == "livrée" || commandeLivres.Etapes == "reglée")
+                {
+                    MessageBox.Show("Il n'est pas possible de supprimer une commande livée", "Information");
+                }
+                else
+                {
+                    if (MessageBox.Show("Voulez-vous vraiment supprimer la commande " + commandeLivres.Id + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        controle.DelCommandeLivres(commandeLivres);
+                        RemplirListeCommandeLivres();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Veuillez selectionner une ligne", "Information");
+                    }
+                }
+            }
+        }
         #endregion
     }
 }
+

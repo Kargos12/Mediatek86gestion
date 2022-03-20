@@ -261,6 +261,5 @@ namespace Mediatek86.modele
                 return false;
             }
         }
-
     }
 }

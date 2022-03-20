@@ -2,7 +2,7 @@
 using Mediatek86.modele;
 using Mediatek86.metier;
 using Mediatek86.vue;
-
+using Mediatek86.dal;
 
 namespace Mediatek86.controleur
 {
@@ -21,6 +21,7 @@ namespace Mediatek86.controleur
         public Controle()
         {
             lesLivres = Dao.GetAllLivres();
+
             lesDvd = Dao.GetAllDvd();
             lesRevues = Dao.GetAllRevues();
             lesGenres = Dao.GetAllGenres();
@@ -29,7 +30,6 @@ namespace Mediatek86.controleur
             FrmMediatek frmMediatek = new FrmMediatek(this);
             frmMediatek.ShowDialog();
         }
-
         /// <summary>
         /// getter sur la liste des genres
         /// </summary>
@@ -101,6 +101,40 @@ namespace Mediatek86.controleur
         public bool CreerExemplaire(Exemplaire exemplaire)
         {
             return Dao.CreerExemplaire(exemplaire);
+        }
+
+        /// <summary>
+        /// Récupère et retourne les infos des commandes de livres provenant de la BDD
+        /// </summary>
+        /// <returns>liste des commandes de livres</returns>
+        public List<CommandeLivres> GetLesCommandeLivres()
+        {
+            return AccesDonnees.GetCommandeLivres();
+        }
+
+        /// <summary>
+        /// Demande d'ajout d'une commande de livres
+        /// </summary>
+        /// <param name="commandeLivres"></param>
+        public void AddCommandeLivres(CommandeLivres commandeLivres)
+        {
+            AccesDonnees.AddCommandeLivres(commandeLivres);
+        }
+        /// <summary>
+        /// Demande de changement du statut etapes d'une commande de livres
+        /// </summary>
+        /// <param name="commandeLivres"></param>
+        public void UpdateEtapes(CommandeLivres commandeLivres)
+        {
+            AccesDonnees.UpdateEtapes(commandeLivres);
+        }
+        /// <summary>
+        /// Demande de suppression d'une commande de livres
+        /// </summary>
+        /// <param name="commandeLivres">objet developpeur à supprimer</param>
+        public void DelCommandeLivres(CommandeLivres commandeLivres)
+        {
+            AccesDonnees.DelCommandeLivres(commandeLivres);
         }
 
     }

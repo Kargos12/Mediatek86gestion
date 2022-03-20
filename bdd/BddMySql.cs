@@ -177,5 +177,10 @@ namespace Mediatek86.bdd
             Console.WriteLine(e.Message);
             Environment.Exit(1);
         }
+
+        internal void ReqUpdate(List<string> requetes, Dictionary<string, object> parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
