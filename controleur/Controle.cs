@@ -107,34 +107,34 @@ namespace Mediatek86.controleur
         /// Récupère et retourne les infos des commandes de livres provenant de la BDD
         /// </summary>
         /// <returns>liste des commandes de livres</returns>
-        public List<CommandeLivres> GetLesCommandeLivres()
+        public List<CommandeDocument> GetLesCommandeDocument()
         {
-            return AccesDonnees.GetCommandeLivres();
+            return AccesDonnees.GetCommandeDocument();
         }
 
         /// <summary>
         /// Demande d'ajout d'une commande de livres
         /// </summary>
-        /// <param name="commandeLivres"></param>
-        public void AddCommandeLivres(CommandeLivres commandeLivres)
+        /// <param name="commandeDocument"></param>
+        public void AddCommandeDocument(CommandeDocument commandeDocument)
         {
-            AccesDonnees.AddCommandeLivres(commandeLivres);
+            AccesDonnees.AddCommandeDocument(commandeDocument);
         }
         /// <summary>
         /// Demande de changement du statut etapes d'une commande de livres
         /// </summary>
-        /// <param name="commandeLivres"></param>
-        public void UpdateEtapes(CommandeLivres commandeLivres)
+        /// <param name="commandeDocument"></param>
+        public void UpdateEtapes(CommandeDocument commandeDocument)
         {
-            AccesDonnees.UpdateEtapes(commandeLivres);
+            AccesDonnees.UpdateEtapes(commandeDocument);
         }
         /// <summary>
         /// Demande de suppression d'une commande de livres
         /// </summary>
-        /// <param name="commandeLivres">objet developpeur à supprimer</param>
-        public void DelCommandeLivres(CommandeLivres commandeLivres)
+        /// <param name="commandeDocument">objet developpeur à supprimer</param>
+        public void DelCommandeLivres(CommandeDocument commandeDocument)
         {
-            AccesDonnees.DelCommandeLivres(commandeLivres);
+            AccesDonnees.DelCommandeDocument(commandeDocument);
         }
 
     }

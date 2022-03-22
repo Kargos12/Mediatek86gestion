@@ -91,7 +91,7 @@
   <ItemGroup>
     <Compile Include="controleur\Controle.cs" />
     <Compile Include="dal\AccesDonnees.cs" />
-    <Compile Include="dal\CommandeLivres.cs" />
+    <Compile Include="dal\CommandeDocument.cs" />
     <Compile Include="mediatek86DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

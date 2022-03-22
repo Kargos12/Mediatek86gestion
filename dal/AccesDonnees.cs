@@ -21,11 +21,11 @@ namespace Mediatek86.dal
         /// <summary>
         /// Récupère et retourne les commandes de livres provenant de la BDD
         /// </summary>
-        /// <returns>liste des commandes de livres</returns>
-        public static List<CommandeLivres> GetCommandeLivres()
+        /// <returns>liste des commandes de documents</returns>
+        public static List<CommandeDocument> GetCommandeDocument()
         {
-            List<CommandeLivres> lesCommandeLivres = new List<CommandeLivres>();
-            string req = "SELECT commandedocument.id, commande.dateCommande, commande.montant,commandedocument.nbExemplaire,suivi.etapes";
+            List<CommandeDocument> lesCommandeDocument = new List<CommandeDocument>();
+            string req = "SELECT commandedocument.id, commande.dateCommande, commande.montant,commandedocument.nbExemplaire,suivi.etapes, commandeDocument.idLivreDvd";
             req +=" FROM commandedocument INNER JOIN commande ON commande.id = commandedocument.id";
             req +=" INNER JOIN suivi ON commandedocument.etatsuivi = suivi.id_suivi ";
             req +=" ORDER BY commande.dateCommande DESC";
@@ -33,60 +33,71 @@ namespace Mediatek86.dal
             curs.ReqSelect(req, null);
             while (curs.Read())
             {
-                CommandeLivres commandeLivres = new CommandeLivres((string)curs.Field("id"), (int)curs.Field("nbExemplaire"), (double)curs.Field("montant"), (DateTime)curs.Field("dateCommande"), (string)curs.Field("etapes"));
-                lesCommandeLivres.Add(commandeLivres);
+                CommandeDocument commandeDocument = new CommandeDocument((string)curs.Field("id"), (int)curs.Field("nbExemplaire"), (double)curs.Field("montant"), (DateTime)curs.Field("dateCommande"), (string)curs.Field("etapes"), (string)curs.Field("idlivredvd"));
+                lesCommandeDocument.Add(commandeDocument);
             }
             curs.Close();
-            return lesCommandeLivres;
+            return lesCommandeDocument;
         }
 
         /// <summary>
         /// Ajoute une commande de livre
         /// </summary>
-        /// <param name="commandeLivres"></param>
-        public static void AddCommandeLivres(CommandeLivres commandeLivres)
+        /// <param name="commandeDocument"></param>
+        public static void AddCommandeDocument(CommandeDocument commandeDocument)
         {
-            string req = "INSERT INTO commandedocument (cd.id, cd.nbExemplaire, c.montant, c.dateCommade, s.etapes)";
-            req += "SELECT cd.id, cd.nbExemplaire, c.montant, c.dateCommande, s.etapes";
-            req += "FROM commandedocument cd";
-            req += "INNER JOIN commande c ON cd.id = c.id";
-            req += "INNER JOIN suivi s ON cd.etatsuivi = s.id_suivi";
-            req += "VALUES (@id, @nbExemplaire, @montant, @dateCommande, @etapes);";
+            string req = "INSERT INTO commande (id, montant, dateCommande)";
+            req += "VALUES (@id, @montant, @dateCommande);";
+
             Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters.Add("@id", commandeLivres.Id);
-            parameters.Add("@nbExemplaire", commandeLivres.NbExemplaire);
-            parameters.Add("@montant", commandeLivres.Montant);
-            parameters.Add("@dateCommande", commandeLivres.DateCommande);
-            parameters.Add("@etapes", commandeLivres.Etapes);
+            parameters.Add("@id", commandeDocument.Id);
+            parameters.Add("@montant", commandeDocument.Montant);
+            parameters.Add("@dateCommande", commandeDocument.DateCommande);
             BddMySql conn = BddMySql.GetInstance(connectionString);
             conn.ReqUpdate(req, parameters);
+
+            string req2 = "INSERT INTO commandeDocument(id, nbExemplaire, etatsuivi, idLivreDvd)";
+            req2 += "VALUES (@id, @nbExemplaire, @etapes, @idLivreDvd);";
+            Dictionary<string, object> parameters2 = new Dictionary<string, object>();
+            parameters2.Add("@id", commandeDocument.Id);
+            parameters2.Add("@nbExemplaire", commandeDocument.NbExemplaire);
+            parameters2.Add("@etapes", commandeDocument.Etapes);
+            parameters2.Add("@idLivreDvd", commandeDocument.IdLivreDvd);
+            conn.ReqUpdate(req2, parameters2);
+
+
         }
         /// <summary>
-        /// Demande de modification du statut etapes d'une commande
+        /// Demande de modification du statut etapes d'une commande de Livre/Dvd
         /// </summary>
-        /// <param name="commandeLivres"></param>
-        public static void UpdateEtapes(CommandeLivres commandeLivres)
+        /// <param name="commandeDocument"></param>
+        public static void UpdateEtapes(CommandeDocument commandeDocument)
         {
             string req = "update commandedocument set etatsuivi = @etapes ";
             req += "where commandeDocument.id = @id;";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters.Add("@etapes", commandeLivres.Etapes);
-            parameters.Add("@id", commandeLivres.Id);
+            parameters.Add("@etapes", commandeDocument.Etapes);
+            parameters.Add("@id", commandeDocument.Id);
             BddMySql conn = BddMySql.GetInstance(connectionString);
             conn.ReqUpdate(req, parameters);
         }
 
         /// <summary>
-        /// Suppression d'une commande de livres
+        /// Suppression d'une commande de livres/Dvd
         /// </summary>
-        /// <param name="commandeLivres">objet commande de livre à supprimer</param>
-        public static void DelCommandeLivres(CommandeLivres commandeLivres)
+        /// <param name="commandeDocument">objet commande de livre à supprimer</param>
+        public static void DelCommandeDocument(CommandeDocument commandeDocument)
         {
-            string req = "delete from commande where commande.id = @id;";
+            string req ="delete from commandedocument where commandeDocument.id = @id;";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters.Add("@id", commandeLivres.Id);
+            parameters.Add("@id", commandeDocument.Id);
             BddMySql conn = BddMySql.GetInstance(connectionString);
             conn.ReqUpdate(req, parameters);
+
+            string req2 = "delete from commande where commande.id = @id;";
+            Dictionary<string, object> parameters2 = new Dictionary<string, object>();
+            parameters2.Add("@id", commandeDocument.Id);
+            conn.ReqUpdate(req2, parameters2);
         }
     }
 }

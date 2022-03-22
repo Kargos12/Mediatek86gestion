@@ -30,12 +30,13 @@ namespace Mediatek86.vue
         /// Objet pour gérer la liste des commandes de livres
         /// </summary>
         private readonly BindingSource bdgLivresListeCommandeLivres = new BindingSource();
-        private readonly CommandeLivres commandeLivres;
+        private readonly CommandeDocument commandeLivres;
         private List<Livre> lesLivres = new List<Livre>();
         private List<Dvd> lesDvd = new List<Dvd>();
         private List<Revue> lesRevues = new List<Revue>();
         private List<Exemplaire> lesExemplaires = new List<Exemplaire>();
         private string etapescmd;
+        private string idlivredvd;
         private string numCommandeLivre;
         private int nbCommandeLivre;
         private double montantCommandeLivre;
@@ -1312,10 +1313,9 @@ namespace Mediatek86.vue
         /// </summary>
         public void RemplirListeCommandeLivres()
         {
-            List<CommandeLivres> lesCommandeLivres = controle.GetLesCommandeLivres();
+            List<CommandeDocument> lesCommandeLivres = controle.GetLesCommandeDocument();
             bdgLivresListeCommandeLivres.DataSource = lesCommandeLivres;
             dgvLivresListeCommandeLivres.DataSource = bdgLivresListeCommandeLivres;
-            ////    dgvLivresListeCommandeLivres.Columns["id"].Visible = false;
             dgvLivresListeCommandeLivres.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -1397,6 +1397,7 @@ namespace Mediatek86.vue
             dtpCommandeLivres.Value = DateTime.Today;
             nudNbCommandeLivres.Value = 0;
             nudMontantCommandeLivres.Value = 0;
+            txtbrefCommandeLivres.Text = "";
             lblDateCommandeLivre.Visible = false;
             dtpCommandeLivres.Visible = false;
         }
@@ -1432,9 +1433,11 @@ namespace Mediatek86.vue
                 nbCommandeLivre = (int)nudNbCommandeLivres.Value;
                 montantCommandeLivre = (double)nudMontantCommandeLivres.Value;
                 dtCommandeLivre = dtpCommandeLivres.Value;
-                etapescmd = "en cours";
-                CommandeLivres commandeLivres = new CommandeLivres(numCommandeLivre, nbCommandeLivre, montantCommandeLivre, dtCommandeLivre, etapescmd);
-                controle.AddCommandeLivres(commandeLivres);
+                etapescmd = "1";
+                idlivredvd = txtNumeroCommandeLivres.Text;
+                CommandeDocument commandeDocument = new CommandeDocument(numCommandeLivre, nbCommandeLivre, montantCommandeLivre, dtCommandeLivre, etapescmd, idlivredvd);
+                controle.AddCommandeDocument(commandeDocument);
+                RemplirListeCommandeLivres();
             }
 
         }
@@ -1447,29 +1450,29 @@ namespace Mediatek86.vue
         {
             if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
             {
-                CommandeLivres commandeLivres = (CommandeLivres)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
+                CommandeDocument commandeDocument = (CommandeDocument)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
                 /// la commande ne peux être relancée que si elle est en cours
-                if (commandeLivres.Etapes == "en cours")
+                if (commandeDocument.Etapes == "en cours")
                 {
                     /// envoi du statut "4" qui correspond à "en cours"
-                    commandeLivres.Etapes = "4";
+                    commandeDocument.Etapes = "4";
                     /// envoi l'id de la commande selectionnée
-                    commandeLivres.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
-                    controle.UpdateEtapes(commandeLivres);
+                    commandeDocument.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
+                    controle.UpdateEtapes(commandeDocument);
                     RemplirListeCommandeLivres();
                     MessageBox.Show("La commande a bien été relancée");
                 }
                 else
                 {
-                    if (commandeLivres.Etapes == "relancée")
+                    if (commandeDocument.Etapes == "relancée")
                     {
                         MessageBox.Show("La commande a déjà été relancée", "Information");
                     }
-                    else if (commandeLivres.Etapes == "livrée")
+                    else if (commandeDocument.Etapes == "livrée")
                     {
                         MessageBox.Show("La commande ne peux pas être relancée, celle-ci a été livrée", "Information");
                     }
-                    else if (commandeLivres.Etapes == "réglée")
+                    else if (commandeDocument.Etapes == "réglée")
                     {
                         MessageBox.Show("Le statut de la commande ne peux pas être changé, celle-ci a été livrée et réglée", "Information");
                     }
@@ -1489,25 +1492,25 @@ namespace Mediatek86.vue
         {
             if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
             {
-                CommandeLivres commandeLivres = (CommandeLivres)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
+                CommandeDocument commandeDocument = (CommandeDocument)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
                 /// la commande peux être mise au statut livrée que si elle est en cours ou relancée
-                if (commandeLivres.Etapes == "en cours" || commandeLivres.Etapes == "relancée")
+                if (commandeDocument.Etapes == "en cours" || commandeDocument.Etapes == "relancée")
                 {
                     /// envoi du statut "2" qui correspond à "en relancée"
-                    commandeLivres.Etapes = "2";
+                    commandeDocument.Etapes = "2";
                     /// envoi l'id de la commande selectionnée
-                    commandeLivres.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
-                    controle.UpdateEtapes(commandeLivres);
+                    commandeDocument.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
+                    controle.UpdateEtapes(commandeDocument);
                     RemplirListeCommandeLivres();
                     MessageBox.Show("La commande a bien été notée comme livrée", "Information");
                 }
                 else
                 {
-                    if (commandeLivres.Etapes == "livrée")
+                    if (commandeDocument.Etapes == "livrée")
                     {
                         MessageBox.Show("La commande est déjà notée comme étant livrée", "Information");
                     }
-                    else if (commandeLivres.Etapes == "réglée")
+                    else if (commandeDocument.Etapes == "réglée")
                     {
                         MessageBox.Show("Le statut de la commande ne peux pas être changé, celle-ci a été livrée et réglée", "Information");
                     }
@@ -1527,25 +1530,25 @@ namespace Mediatek86.vue
         {
             if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
             {
-                CommandeLivres commandeLivres = (CommandeLivres)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
+                CommandeDocument commandeDocument = (CommandeDocument)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
                 /// la commande ne peux être notée réglée que si elle a été livrée
-                if (commandeLivres.Etapes == "livrée")
+                if (commandeDocument.Etapes == "livrée")
                 {
                     /// envoi du statut "3" qui correspond à "en reglée"
-                    commandeLivres.Etapes = "3";
+                    commandeDocument.Etapes = "3";
                     /// envoi l'id de la commande selectionnée
-                    commandeLivres.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
-                    controle.UpdateEtapes(commandeLivres);
+                    commandeDocument.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
+                    controle.UpdateEtapes(commandeDocument);
                     RemplirListeCommandeLivres();
                     MessageBox.Show("La commande a bien été notée comme reglée", "Information");
                 }
                 else
                 {
-                    if (commandeLivres.Etapes == "réglée")
+                    if (commandeDocument.Etapes == "réglée")
                     {
                         MessageBox.Show("La commande est déjà notée comme étant réglée", "Information");
                     }
-                    else if (commandeLivres.Etapes == "en cours" || commandeLivres.Etapes == "relancée")
+                    else if (commandeDocument.Etapes == "en cours" || commandeDocument.Etapes == "relancée")
                     {
                         MessageBox.Show("La commande ne peux pas être notée réglée : elle n'a pas été livrée", "Information");
                     }
@@ -1563,26 +1566,27 @@ namespace Mediatek86.vue
         /// <param name="e"></param>
         private void btnStatutCommandeLivresSupprimer_Click(object sender, EventArgs e)
         {
-            CommandeLivres commandeLivres = (CommandeLivres)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
+            CommandeDocument commandeDocument = (CommandeDocument)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
             if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
             {
-                if (commandeLivres.Etapes == "livrée" || commandeLivres.Etapes == "reglée")
+                if (commandeDocument.Etapes == "livrée" || commandeDocument.Etapes == "reglée")
                 {
                     MessageBox.Show("Il n'est pas possible de supprimer une commande livée", "Information");
                 }
                 else
                 {
-                    if (MessageBox.Show("Voulez-vous vraiment supprimer la commande " + commandeLivres.Id + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Voulez-vous vraiment supprimer la commande du livre ayant pour référence " + commandeDocument.Id + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        controle.DelCommandeLivres(commandeLivres);
+                        controle.DelCommandeLivres(commandeDocument);
                         RemplirListeCommandeLivres();
                     }
-                    else
+                    
+                }
+            }
+            else
                     {
                         MessageBox.Show("Veuillez selectionner une ligne", "Information");
                     }
-                }
-            }
         }
         #endregion
     }
