@@ -30,11 +30,12 @@ namespace Mediatek86.vue
         /// Objet pour gérer la liste des commandes de livres
         /// </summary>
         private readonly BindingSource bdgLivresListeCommandeLivres = new BindingSource();
-        private readonly CommandeDocument commandeLivres;
+   ///     private readonly CommandeDocument commandedocument;
         private List<Livre> lesLivres = new List<Livre>();
         private List<Dvd> lesDvd = new List<Dvd>();
         private List<Revue> lesRevues = new List<Revue>();
         private List<Exemplaire> lesExemplaires = new List<Exemplaire>();
+        private List<CommandeDocument> lescommandeDocument = new List<CommandeDocument>();
         private string etapescmd;
         private string idlivredvd;
         private string numCommandeLivre;
@@ -1308,14 +1309,20 @@ namespace Mediatek86.vue
             dtpCommandeLivres.Value = DateTime.Today;
         }
 
+
         /// <summary>
-        /// Affiche les Commandes de livres
+        /// Affiche tout leslivres
         /// </summary>
         public void RemplirListeCommandeLivres()
         {
             List<CommandeDocument> lesCommandeLivres = controle.GetLesCommandeDocument();
+
             bdgLivresListeCommandeLivres.DataSource = lesCommandeLivres;
             dgvLivresListeCommandeLivres.DataSource = bdgLivresListeCommandeLivres;
+            dgvLivresListeCommandeLivres.Columns["id"].HeaderText = "Ref commande";
+            dgvLivresListeCommandeLivres.Columns["nbExemplaire"].HeaderText = "Nbre d'exemplaire";
+            dgvLivresListeCommandeLivres.Columns["DateCommande"].HeaderText = "Date commande";
+            dgvLivresListeCommandeLivres.Columns["idLivreDvd"].HeaderText = "Ref livre";
             dgvLivresListeCommandeLivres.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -1331,11 +1338,13 @@ namespace Mediatek86.vue
         {
             if (!txtNumeroCommandeLivres.Text.Equals(""))
             {
+                CommandeDocument commandeDocument = lescommandeDocument.Find(x => x.IdLivreDvd.Equals(txtNumeroCommandeLivres.Text.Trim()));
                 Livre livre = lesLivres.Find(x => x.Id.Equals(txtNumeroCommandeLivres.Text.Trim()));
                 if (livre != null)
                 {
                     AfficheInfosLivreCommandeLivres(livre);
                     RemplirListeCommandeLivres();
+                    List<Livre> livres = new List<Livre>();
                     gpbNouvelleCommandeCommandeLivres.Visible = true;
                     grbModificationCommandeLivres.Visible = true;
                 }
@@ -1371,6 +1380,14 @@ namespace Mediatek86.vue
             txtISBNCommandeLivres.Text = livre.Isbn;
         }
 
+        /// <summary>
+        /// Réinitialise les info du livre
+        /// </summary>
+        private void VideInfoCommandeLivre()
+        {
+            txtbrefCommandeLivres.Text = "";
+            nudNbCommandeLivres.Value = 0;
+        }
         /// <summary>
         /// Réinitialise les info du livre
         /// </summary>
@@ -1438,6 +1455,7 @@ namespace Mediatek86.vue
                 CommandeDocument commandeDocument = new CommandeDocument(numCommandeLivre, nbCommandeLivre, montantCommandeLivre, dtCommandeLivre, etapescmd, idlivredvd);
                 controle.AddCommandeDocument(commandeDocument);
                 RemplirListeCommandeLivres();
+                VideInfoCommandeLivre();
             }
 
         }
@@ -1485,6 +1503,8 @@ namespace Mediatek86.vue
         }
         /// <summary>
         /// Clique sur le bouton pour mettre la commande selectionnée au statut livrée
+        /// Possible que si la commande est en cours ou relancée
+        /// ajoute les exemplaires dans la table corresponsante
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1501,7 +1521,19 @@ namespace Mediatek86.vue
                     /// envoi l'id de la commande selectionnée
                     commandeDocument.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
                     controle.UpdateEtapes(commandeDocument);
-                    RemplirListeCommandeLivres();
+
+                    /// ajout des exemplaires dans la table correspondante
+                    for (int k = 1; k <= commandeDocument.NbExemplaire; k++)
+                    {
+                        int numero = k;
+                        DateTime dateAchat = commandeDocument.DateCommande;
+                        string photo = "";
+                        string idEtat = ETATNEUF;
+                        string idDocument = commandeDocument.IdLivreDvd;
+                        Exemplaire exemplaire = new Exemplaire(numero, dateAchat, photo, idEtat, idDocument);
+                        controle.CreerExemplaire(exemplaire);
+                        RemplirListeCommandeLivres();               
+                    }
                     MessageBox.Show("La commande a bien été notée comme livrée", "Information");
                 }
                 else
