@@ -113,7 +113,7 @@ namespace Mediatek86.controleur
         }
 
         /// <summary>
-        /// Demande d'ajout d'une commande de livres
+        /// Demande d'ajout d'une commande de livres/dvds
         /// </summary>
         /// <param name="commandeDocument"></param>
         public void AddCommandeDocument(CommandeDocument commandeDocument)
@@ -121,7 +121,7 @@ namespace Mediatek86.controleur
             AccesDonnees.AddCommandeDocument(commandeDocument);
         }
         /// <summary>
-        /// Demande de changement du statut etapes d'une commande de livres
+        /// Demande de changement du statut etapes d'une commande de livres/dvds
         /// </summary>
         /// <param name="commandeDocument"></param>
         public void UpdateEtapes(CommandeDocument commandeDocument)
@@ -129,10 +129,10 @@ namespace Mediatek86.controleur
             AccesDonnees.UpdateEtapes(commandeDocument);
         }
         /// <summary>
-        /// Demande de suppression d'une commande de livres
+        /// Demande de suppression d'une commande de livres/dvds
         /// </summary>
         /// <param name="commandeDocument">objet developpeur à supprimer</param>
-        public void DelCommandeLivres(CommandeDocument commandeDocument)
+        public void DelCommandeDocument(CommandeDocument commandeDocument)
         {
             AccesDonnees.DelCommandeDocument(commandeDocument);
         }
