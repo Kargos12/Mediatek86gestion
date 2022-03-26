@@ -26,6 +26,7 @@ namespace Mediatek86.vue
         private readonly BindingSource bdgRayons = new BindingSource();
         private readonly BindingSource bdgRevuesListe = new BindingSource();
         private readonly BindingSource bdgExemplairesListe = new BindingSource();
+        private readonly BindingSource bdgListeCommandeRevues = new BindingSource();
         /// <summary>
         /// Objet pour gérer la liste des commandes de dvds
         /// </summary>
@@ -1629,6 +1630,7 @@ namespace Mediatek86.vue
                     }
         }
         #endregion
+
         #region Commande de Dvds
         //-----------------------------------------------------------
         // ONGLET "Commande de Dvds"
@@ -1950,6 +1952,80 @@ namespace Mediatek86.vue
             {
                 MessageBox.Show("Veuillez selectionner une ligne", "Information");
             }
+        }
+        #endregion
+
+        #region Commande de Revues
+        //-----------------------------------------------------------
+        // ONGLET "Commande de Revues"
+        //-----------------------------------------------------------
+
+        /// <summary>
+        /// Ouverture de l'onglet de commande de Revues : 
+        /// appel des méthodes pour remplir le datagrid des revues et des combos (genre, rayon, public)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabCommandeRevues_Enter(object sender, EventArgs e)
+        {
+            lesRevues = controle.GetAllRevues();
+        }
+
+
+        /// <summary>
+        /// Recherche et affichage de la revue dont on a saisi le numéro.
+        /// Si non trouvée, affichage d'un MessageBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRechercheCommandeRevues_Click(object sender, EventArgs e)
+            {
+                if (!txtNumeroCommandeRevues.Text.Equals(""))
+                {
+                    Revue revue = lesRevues.Find(x => x.Id.Equals(txtNumeroCommandeRevues.Text));
+                    if (revue != null)
+                    {
+                        List<Revue> revues = new List<Revue>();
+                        revues.Add(revue);
+                    RemplirRevuesListeONCommande(revues);
+                    }
+                    else
+                    {
+                    MessageBox.Show("Numéro introuvable");
+                    txtNumeroCommandeRevues.Text = "";
+                    txtNumeroCommandeRevues.Focus();
+                    }
+                }
+                else
+                {
+                RemplirRevuesListeONCommandeComplete();
+                }
+        }
+
+        /// <summary>
+        /// Remplit le dategrid de revue de l'onglet commande de revues avec la liste reçue en paramètre
+        /// </summary>
+        private void RemplirRevuesListeONCommande(List<Revue> revues)
+        {
+            bdgListeCommandeRevues.DataSource = revues;
+            dgvListeCommandeRevues.DataSource = bdgListeCommandeRevues;
+            dgvListeCommandeRevues.Columns["empruntable"].Visible = false;
+            dgvListeCommandeRevues.Columns["idRayon"].Visible = false;
+            dgvListeCommandeRevues.Columns["idGenre"].Visible = false;
+            dgvListeCommandeRevues.Columns["idPublic"].Visible = false;
+            dgvListeCommandeRevues.Columns["image"].Visible = false;
+            dgvListeCommandeRevues.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvListeCommandeRevues.Columns["id"].DisplayIndex = 0;
+            dgvListeCommandeRevues.Columns["titre"].DisplayIndex = 1;
+        }
+        /// <summary>
+        /// Affichage de la liste complète des revues
+        /// et annulation de toutes les recherches et filtres
+        /// </summary>
+        private void RemplirRevuesListeONCommandeComplete()
+        {
+            RemplirRevuesListeONCommande(lesRevues);
+           /// VideRevuesZones();
         }
         #endregion
     }
