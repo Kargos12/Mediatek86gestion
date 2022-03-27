@@ -40,6 +40,7 @@ namespace Mediatek86.vue
         private List<Revue> lesRevues = new List<Revue>();
         private List<Exemplaire> lesExemplaires = new List<Exemplaire>();
         private List<CommandeDocument> lescommandeDocument = new List<CommandeDocument>();
+        private List<AbonnementRevue> lesabonnementRevue = new List<AbonnementRevue>();
         private string etapescmd;
         private string idlivredvd;
         private string numCommandeLivre;
@@ -50,7 +51,11 @@ namespace Mediatek86.vue
         private int nbCommandeDvd;
         private double montantCommandeDvd;
         private DateTime dtCommandeDvd;
-
+        private string numCommandeRevue;
+        private double montantCommandeRevue;
+        private DateTime dtCommandeRevue;
+        private DateTime dtFinCommandeRevue;
+        private string refRevue;
 
 
         internal FrmMediatek(Controle controle)
@@ -1465,6 +1470,7 @@ namespace Mediatek86.vue
                 controle.AddCommandeDocument(commandeDocument);
                 RemplirListeCommandeLivres();
                 VideInfoCommandeLivre();
+                MessageBox.Show("Commande réalisée");
             }
 
         }
@@ -1659,7 +1665,7 @@ namespace Mediatek86.vue
             dgvListeCommandeDvds.Columns["id"].HeaderText = "Ref commande";
             dgvListeCommandeDvds.Columns["nbExemplaire"].HeaderText = "Nbre d'exemplaire";
             dgvListeCommandeDvds.Columns["DateCommande"].HeaderText = "Date commande";
-            dgvListeCommandeDvds.Columns["idLivreDvd"].HeaderText = "Ref livre";
+            dgvListeCommandeDvds.Columns["idLivreDvd"].HeaderText = "Ref Dvd";
             dgvListeCommandeDvds.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         /// <summary>
@@ -1790,6 +1796,7 @@ namespace Mediatek86.vue
                 controle.AddCommandeDocument(commandeDocument);
                 RemplirListeCommandeDvds();
                 VideInfoCommandeDvd();
+                MessageBox.Show("Commande réalisée");
             }
         }
         /// <summary>
@@ -1962,13 +1969,13 @@ namespace Mediatek86.vue
 
         /// <summary>
         /// Ouverture de l'onglet de commande de Revues : 
-        /// appel des méthodes pour remplir le datagrid des revues et des combos (genre, rayon, public)
+        /// Initialise le champ de date de commande des revues à la date du jour
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void tabCommandeRevues_Enter(object sender, EventArgs e)
         {
-            lesRevues = controle.GetAllRevues();
+            dtpCommandeAboRevues.Value = DateTime.Today;
         }
 
 
@@ -1987,7 +1994,7 @@ namespace Mediatek86.vue
                     {
                         List<Revue> revues = new List<Revue>();
                         revues.Add(revue);
-                    RemplirRevuesListeONCommande(revues);
+                    AfficheInfosRevues(revue);
                     }
                     else
                     {
@@ -1996,36 +2003,104 @@ namespace Mediatek86.vue
                     txtNumeroCommandeRevues.Focus();
                     }
                 }
-                else
-                {
-                RemplirRevuesListeONCommandeComplete();
-                }
         }
+
+        /// <summary>
+        /// Affichage des informations de la revue cherchée
+        /// </summary>
+        /// <param name="revue"></param>
+        private void AfficheInfosRevues(Revue revue)
+        {
+            // informations sur la revue
+            txtTitreCommandeRevues.Text = revue.Titre;
+            txtPeriodeCommandeRevues.Text = revue.Periodicite;
+            txtDelaiCommandeRevues.Text = revue.DelaiMiseADispo.ToString();
+            txtGenreCommandeRevues.Text = revue.Genre;
+            txtPublicCommandeRevues.Text = revue.Public;
+            txtRayonCommandeRevues.Text = revue.Rayon;
+            txtCheminCommandeRevues.Text = revue.Image;
+        }
+
 
         /// <summary>
         /// Remplit le dategrid de revue de l'onglet commande de revues avec la liste reçue en paramètre
         /// </summary>
-        private void RemplirRevuesListeONCommande(List<Revue> revues)
+        private void RemplirRevuesListeONCommande(List<AbonnementRevue> abonnementRevues)
         {
-            bdgListeCommandeRevues.DataSource = revues;
+            bdgListeCommandeRevues.DataSource = abonnementRevues;
             dgvListeCommandeRevues.DataSource = bdgListeCommandeRevues;
-            dgvListeCommandeRevues.Columns["empruntable"].Visible = false;
-            dgvListeCommandeRevues.Columns["idRayon"].Visible = false;
-            dgvListeCommandeRevues.Columns["idGenre"].Visible = false;
-            dgvListeCommandeRevues.Columns["idPublic"].Visible = false;
-            dgvListeCommandeRevues.Columns["image"].Visible = false;
             dgvListeCommandeRevues.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvListeCommandeRevues.Columns["id"].DisplayIndex = 0;
-            dgvListeCommandeRevues.Columns["titre"].DisplayIndex = 1;
         }
+
         /// <summary>
-        /// Affichage de la liste complète des revues
-        /// et annulation de toutes les recherches et filtres
+        /// Evénement sur le clique de validation de l'abonnement à une revue
+        /// Vérification si tous les champs sont renseignés
         /// </summary>
-        private void RemplirRevuesListeONCommandeComplete()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnValiderCommandeRevues_Click(object sender, EventArgs e)
         {
-            RemplirRevuesListeONCommande(lesRevues);
-           /// VideRevuesZones();
+            if (txtbrefCommandeRevues.Text == "")
+            {
+                MessageBox.Show("La commande doit avoir une référence");
+                txtbrefCommandeRevues.Focus();
+            }
+            else if (nudMontantCommandeRevues.Value == 0)
+            {
+                MessageBox.Show("Le montant ne peux être égal à 0");
+                nudMontantCommandeRevues.Focus();
+            }
+            else
+            {
+                numCommandeRevue = txtbrefCommandeRevues.Text;
+                montantCommandeRevue = (double)nudMontantCommandeRevues.Value;
+                dtCommandeRevue = dtpCommandeAboRevues.Value;
+                dtFinCommandeRevue = dtpCommandeFinAboRevues.Value;
+                refRevue = txtNumeroCommandeRevues.Text;
+                AbonnementRevue abonnementRevue = new AbonnementRevue (numCommandeRevue, montantCommandeRevue, dtCommandeRevue, dtFinCommandeRevue, refRevue);
+                controle.AddAbonnementRevue(abonnementRevue);
+
+
+                List<CommandeDocument> lesCommandeDvds = controle.GetLesCommandeDocument();
+
+                bdgListeCommandeDvds.DataSource = lesCommandeDvds;
+                dgvListeCommandeDvds.DataSource = bdgListeCommandeDvds;
+                dgvListeCommandeDvds.Columns["id"].HeaderText = "Ref commande";
+                dgvListeCommandeDvds.Columns["nbExemplaire"].HeaderText = "Nbre d'exemplaire";
+                dgvListeCommandeDvds.Columns["DateCommande"].HeaderText = "Date commande";
+                dgvListeCommandeDvds.Columns["idLivreDvd"].HeaderText = "Ref Dvd";
+                dgvListeCommandeDvds.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+
+                abonnementRevue = lesabonnementRevue.Find(x => x.IdRevue.Equals(txtNumeroCommandeRevues.Text));
+                if (abonnementRevue != null)
+                    {
+                        List<AbonnementRevue> abonnementRevues = new List<AbonnementRevue>();
+                        abonnementRevues.Add(abonnementRevue);
+                        RemplirRevuesListeONCommande(abonnementRevues);
+                    }       
+                MessageBox.Show("Abonnement effectif jusqu'au " +dtFinCommandeRevue);
+                VideRevuesCommandeZones();
+              
+                }
+        }
+            /// <summary>
+            /// Evènement lors du clique sur l'annulation de demande d'abonnement à une revue
+            /// Vide le champ référence de la commande
+            /// réinitialise la date de fin d'abonnement à la date du jour
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void btnAnnulerCommandeRevues_Click(object sender, EventArgs e)
+        {
+            VideRevuesCommandeZones();
+        }
+        private void VideRevuesCommandeZones()
+        {
+            txtbrefCommandeRevues.Text = "";
+            dtpCommandeFinAboRevues.Value = DateTime.Today;
+            nudMontantCommandeRevues.Value = 0;
         }
         #endregion
     }

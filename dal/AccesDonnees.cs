@@ -26,9 +26,9 @@ namespace Mediatek86.dal
         {
             List<CommandeDocument> lesCommandeDocument = new List<CommandeDocument>();
             string req = "SELECT commandedocument.id, commande.dateCommande, commande.montant,commandedocument.nbExemplaire,suivi.etapes, commandeDocument.idLivreDvd";
-            req +=" FROM commandedocument INNER JOIN commande ON commande.id = commandedocument.id";
-            req +=" INNER JOIN suivi ON commandedocument.etatsuivi = suivi.id_suivi ";
-            req +=" ORDER BY commande.dateCommande DESC";
+            req += " FROM commandedocument INNER JOIN commande ON commande.id = commandedocument.id";
+            req += " INNER JOIN suivi ON commandedocument.etatsuivi = suivi.id_suivi ";
+            req += " ORDER BY commande.dateCommande DESC";
             BddMySql curs = BddMySql.GetInstance(connectionString);
             curs.ReqSelect(req, null);
             while (curs.Read())
@@ -88,7 +88,7 @@ namespace Mediatek86.dal
         /// <param name="commandeDocument">objet commande de livre à supprimer</param>
         public static void DelCommandeDocument(CommandeDocument commandeDocument)
         {
-            string req ="delete from commandedocument where commandeDocument.id = @id;";
+            string req = "delete from commandedocument where commandeDocument.id = @id;";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@id", commandeDocument.Id);
             BddMySql conn = BddMySql.GetInstance(connectionString);
@@ -99,5 +99,59 @@ namespace Mediatek86.dal
             parameters2.Add("@id", commandeDocument.Id);
             conn.ReqUpdate(req2, parameters2);
         }
+        /// <summary>
+        /// Ajoute un abonnement à une revue
+        /// </summary>
+        /// <param name="abonnementRevue"></param>
+        public static void AddAbonnementRevue(AbonnementRevue abonnementRevue)
+        {
+            string req = "INSERT INTO commande (id, montant, dateCommande)";
+            req += "VALUES (@id, @montant, @dateCommande);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@id", abonnementRevue.Id);
+            parameters.Add("@montant", abonnementRevue.Montant);
+            parameters.Add("@dateCommande", abonnementRevue.DateCommande);
+            BddMySql conn = BddMySql.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+
+            string req2 = "INSERT INTO abonnement(id, dateFinAbonnement, idRevue)";
+            req2 += "VALUES (@id, @dateFinAbonnement, @idRevue);";
+            Dictionary<string, object> parameters2 = new Dictionary<string, object>();
+            parameters2.Add("@id", abonnementRevue.Id);
+            parameters2.Add("@dateFinAbonnement", abonnementRevue.DateFinAbonnement);
+            parameters2.Add("@idRevue", abonnementRevue.IdRevue);
+            conn.ReqUpdate(req2, parameters2);
+        }
+        /// <summary>
+        /// Controle si l'utillisateur a le droit de se connecter (identifiant, mot de passe)
+        /// </summary>
+        /// <param name="Identifiant"></param>
+        /// <param name="MotDePasse"></param>
+        /// <returns></returns>
+        public static Boolean ControleAuthentification(string Identifiant, string MotDePasse)
+        {
+            string req = "select * from utilisateur u join service s on u.idservice=s.id ";
+            req += "where u.identifiant=@identifiant and u.motdepasse=@motdepasse";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@Identifiant", Identifiant);
+            parameters.Add("@MotDePasse", MotDePasse);
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, parameters);
+            if (curs.Read())
+            {
+                curs.Close();
+                return true;
+            }
+            else
+            {
+                curs.Close();
+                return false;
+            }
+        }
     }
+    
 }
+
+        
+    

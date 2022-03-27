@@ -3,6 +3,7 @@ using Mediatek86.modele;
 using Mediatek86.metier;
 using Mediatek86.vue;
 using Mediatek86.dal;
+using System;
 
 namespace Mediatek86.controleur
 {
@@ -14,6 +15,10 @@ namespace Mediatek86.controleur
         private readonly List<Categorie> lesRayons;
         private readonly List<Categorie> lesPublics;
         private readonly List<Categorie> lesGenres;
+        /// <summary>
+        /// fenêtre d'authentification
+        /// </summary>
+        private FormAuthentification formAuthentification;
 
         /// <summary>
         /// Ouverture de la fenêtre
@@ -21,7 +26,6 @@ namespace Mediatek86.controleur
         public Controle()
         {
             lesLivres = Dao.GetAllLivres();
-
             lesDvd = Dao.GetAllDvd();
             lesRevues = Dao.GetAllRevues();
             lesGenres = Dao.GetAllGenres();
@@ -29,6 +33,8 @@ namespace Mediatek86.controleur
             lesPublics = Dao.GetAllPublics();
             FrmMediatek frmMediatek = new FrmMediatek(this);
             frmMediatek.ShowDialog();
+            formAuthentification = new FormAuthentification();
+            formAuthentification.ShowDialog();
         }
         /// <summary>
         /// getter sur la liste des genres
@@ -136,7 +142,35 @@ namespace Mediatek86.controleur
         {
             AccesDonnees.DelCommandeDocument(commandeDocument);
         }
+        /// <summary>
+        /// Demande d'ajout d'abonnement à une revue
+        /// </summary>
+        /// <param name="abonnementRevue"></param>
+        public void AddAbonnementRevue(AbonnementRevue abonnementRevue)
+        {
+            AccesDonnees.AddAbonnementRevue(abonnementRevue);
+        }
 
+        /// <summary>
+        /// Demande la vérification de l'authentification
+        /// Si correct, alors ouvre la fenêtre principale
+        /// </summary>
+        /// <param name="Identifiant"></param>
+        /// <param name="MotDePasse"></param>
+        /// <returns></returns>
+        public Boolean ControleAuthentification(string Identifiant, string MotDePasse)
+        {
+            if (AccesDonnees.ControleAuthentification(Identifiant,MotDePasse))
+            {
+                formAuthentification.Hide();
+                (new FrmMediatek(this)).ShowDialog();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
 }

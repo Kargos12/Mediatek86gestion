@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controleur\Controle.cs" />
+    <Compile Include="dal\AbonnementRevue.cs" />
     <Compile Include="dal\AccesDonnees.cs" />
     <Compile Include="dal\CommandeDocument.cs" />
     <Compile Include="mediatek86DataSet2.Designer.cs">
@@ -109,6 +110,12 @@
     <Compile Include="metier\Livre.cs" />
     <Compile Include="metier\Exemplaire.cs" />
     <Compile Include="metier\Revue.cs" />
+    <Compile Include="vue\FormAuthentification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vue\FormAuthentification.Designer.cs">
+      <DependentUpon>FormAuthentification.cs</DependentUpon>
+    </Compile>
     <Compile Include="vue\FrmMediatek.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vue\FormAuthentification.resx">
+      <DependentUpon>FormAuthentification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vue\FrmMediatek.resx">
       <DependentUpon>FrmMediatek.cs</DependentUpon>
     </EmbeddedResource>
