@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mediatek86.dal
 {
-    class AbonnementRevue
+    public class AbonnementRevue
     {
         private string id;
         private double montant;

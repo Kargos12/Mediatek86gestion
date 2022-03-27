@@ -7,18 +7,21 @@ using System;
 
 namespace Mediatek86.controleur
 {
-    internal class Controle
+    public class Controle
     {
+
+        /// <summary>
+        /// fenêtre d'authentification
+        /// </summary>
+        public FormAuthentification formAuthentification;
+
         private readonly List<Livre> lesLivres;
         private readonly List<Dvd> lesDvd;
         private readonly List<Revue> lesRevues;
         private readonly List<Categorie> lesRayons;
         private readonly List<Categorie> lesPublics;
         private readonly List<Categorie> lesGenres;
-        /// <summary>
-        /// fenêtre d'authentification
-        /// </summary>
-        private FormAuthentification formAuthentification;
+
 
         /// <summary>
         /// Ouverture de la fenêtre
@@ -31,10 +34,10 @@ namespace Mediatek86.controleur
             lesGenres = Dao.GetAllGenres();
             lesRayons = Dao.GetAllRayons();
             lesPublics = Dao.GetAllPublics();
+            formAuthentification = new FormAuthentification(this);
+            formAuthentification.ShowDialog();
             FrmMediatek frmMediatek = new FrmMediatek(this);
             frmMediatek.ShowDialog();
-            formAuthentification = new FormAuthentification();
-            formAuthentification.ShowDialog();
         }
         /// <summary>
         /// getter sur la liste des genres

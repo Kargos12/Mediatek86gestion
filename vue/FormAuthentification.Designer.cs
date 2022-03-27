@@ -34,6 +34,7 @@ namespace Mediatek86.vue
             this.txtIdentifiant = new System.Windows.Forms.TextBox();
             this.txtMotDePasse = new System.Windows.Forms.TextBox();
             this.btnConnection = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,33 +59,46 @@ namespace Mediatek86.vue
             // 
             // txtIdentifiant
             // 
-            this.txtIdentifiant.Location = new System.Drawing.Point(161, 20);
+            this.txtIdentifiant.Location = new System.Drawing.Point(164, 20);
             this.txtIdentifiant.Name = "txtIdentifiant";
-            this.txtIdentifiant.Size = new System.Drawing.Size(100, 22);
-            this.txtIdentifiant.TabIndex = 2;
+            this.txtIdentifiant.Size = new System.Drawing.Size(109, 22);
+            this.txtIdentifiant.TabIndex = 0;
             // 
             // txtMotDePasse
             // 
-            this.txtMotDePasse.Location = new System.Drawing.Point(161, 70);
+            this.txtMotDePasse.Location = new System.Drawing.Point(164, 70);
             this.txtMotDePasse.Name = "txtMotDePasse";
-            this.txtMotDePasse.Size = new System.Drawing.Size(100, 22);
-            this.txtMotDePasse.TabIndex = 3;
+            this.txtMotDePasse.PasswordChar = '*';
+            this.txtMotDePasse.Size = new System.Drawing.Size(109, 22);
+            this.txtMotDePasse.TabIndex = 1;
             // 
             // btnConnection
             // 
-            this.btnConnection.Location = new System.Drawing.Point(94, 108);
+            this.btnConnection.Location = new System.Drawing.Point(164, 118);
             this.btnConnection.Name = "btnConnection";
-            this.btnConnection.Size = new System.Drawing.Size(124, 36);
-            this.btnConnection.TabIndex = 4;
+            this.btnConnection.Size = new System.Drawing.Size(109, 36);
+            this.btnConnection.TabIndex = 2;
             this.btnConnection.Text = "Se connecter";
             this.btnConnection.UseVisualStyleBackColor = true;
             this.btnConnection.Click += new System.EventHandler(this.btnConnection_Click);
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Location = new System.Drawing.Point(24, 118);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(109, 36);
+            this.btnAnnuler.TabIndex = 3;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // FormAuthentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(296, 156);
+            this.ClientSize = new System.Drawing.Size(309, 188);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConnection);
             this.Controls.Add(this.txtMotDePasse);
             this.Controls.Add(this.txtIdentifiant);
@@ -104,5 +118,6 @@ namespace Mediatek86.vue
         private System.Windows.Forms.TextBox txtIdentifiant;
         private System.Windows.Forms.TextBox txtMotDePasse;
         private System.Windows.Forms.Button btnConnection;
+        private System.Windows.Forms.Button btnAnnuler;
     }
 }

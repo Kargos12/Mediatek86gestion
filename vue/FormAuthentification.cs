@@ -11,12 +11,21 @@ using System.Windows.Forms;
 
 namespace Mediatek86.vue
 {
+    /// <summary>
+    /// Fenêtre d'authentification
+    /// </summary>
     public partial class FormAuthentification : Form
     {
         /// <summary>
         /// instance du controleur
         /// </summary>
         private Controle controle;
+
+        public FormAuthentification(Controle controle)
+        {
+            InitializeComponent();
+            this.controle = controle;
+        }
 
         /// <summary>
         /// Evénement sur le bouton se connecter
@@ -47,6 +56,10 @@ namespace Mediatek86.vue
                     txtIdentifiant.Focus();
                 }
             }
+        }
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
