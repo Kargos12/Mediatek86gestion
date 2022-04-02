@@ -121,6 +121,15 @@ namespace Mediatek86.controleur
         }
 
         /// <summary>
+        /// Récupère et retourne les infos des abonnement à une revue provenant de la BDD
+        /// </summary>
+        /// <returns>liste des abonnements à une revue</returns>
+        public List<AbonnementRevue> GetLesAbonnement(string refRevue)
+        {
+            return AccesDonnees.GetAbonnement(refRevue);
+        }
+
+        /// <summary>
         /// Demande d'ajout d'une commande de livres/dvds
         /// </summary>
         /// <param name="commandeDocument"></param>

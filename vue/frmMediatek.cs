@@ -63,7 +63,7 @@ namespace Mediatek86.vue
 
         /// <summary>
         /// Gestion de l'ouverture de l'application
-        /// Si l'utilisateur est du service de prets : aches les ont
+        /// Si l'utilisateur est du service de prets : caches les onglets de gestion de commandes
         /// </summary>
         /// <param name="controle"></param>
 
@@ -76,7 +76,6 @@ namespace Mediatek86.vue
                 tabOngletsApplication.TabPages.Remove(tabCommandeLivres);
                 tabOngletsApplication.TabPages.Remove(tabCommandeDvds);
                 tabOngletsApplication.TabPages.Remove(tabCommandeRevues);
-
             }
         }
         #endregion
@@ -2041,9 +2040,11 @@ namespace Mediatek86.vue
         /// <summary>
         /// Remplit le dategrid de revue de l'onglet commande de revues avec la liste reçue en paramètre
         /// </summary>
-        private void RemplirRevuesListeONCommande(List<AbonnementRevue> abonnementRevues)
+        private void RemplirRevuesListeONCommande(List<AbonnementRevue> lesabonnementRevues)
         {
-            bdgListeCommandeRevues.DataSource = abonnementRevues;
+            
+
+            bdgListeCommandeRevues.DataSource = lesabonnementRevues;
             dgvListeCommandeRevues.DataSource = bdgListeCommandeRevues;
             dgvListeCommandeRevues.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
@@ -2076,26 +2077,10 @@ namespace Mediatek86.vue
                 AbonnementRevue abonnementRevue = new AbonnementRevue (numCommandeRevue, montantCommandeRevue, dtCommandeRevue, dtFinCommandeRevue, refRevue);
                 controle.AddAbonnementRevue(abonnementRevue);
 
-
-                List<CommandeDocument> lesCommandeDvds = controle.GetLesCommandeDocument();
-
-                bdgListeCommandeDvds.DataSource = lesCommandeDvds;
-                dgvListeCommandeDvds.DataSource = bdgListeCommandeDvds;
-                dgvListeCommandeDvds.Columns["id"].HeaderText = "Ref commande";
-                dgvListeCommandeDvds.Columns["nbExemplaire"].HeaderText = "Nbre d'exemplaire";
-                dgvListeCommandeDvds.Columns["DateCommande"].HeaderText = "Date commande";
-                dgvListeCommandeDvds.Columns["idLivreDvd"].HeaderText = "Ref Dvd";
-                dgvListeCommandeDvds.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-
-
-                abonnementRevue = lesabonnementRevue.Find(x => x.IdRevue.Equals(txtNumeroCommandeRevues.Text));
-                if (abonnementRevue != null)
-                    {
-                        List<AbonnementRevue> abonnementRevues = new List<AbonnementRevue>();
-                        abonnementRevues.Add(abonnementRevue);
-                        RemplirRevuesListeONCommande(abonnementRevues);
-                    }       
+                List<AbonnementRevue> lesabonnementRevue = controle.GetLesAbonnement(refRevue);
+                lesabonnementRevue.Add(abonnementRevue);
+                RemplirRevuesListeONCommande(lesabonnementRevue);
+                    
                 MessageBox.Show("Abonnement effectif jusqu'au " +dtFinCommandeRevue);
                 VideRevuesCommandeZones();
               
@@ -2112,6 +2097,9 @@ namespace Mediatek86.vue
         {
             VideRevuesCommandeZones();
         }
+        /// <summary>
+        /// Vide les informations de la partie commandes des revues
+        /// </summary>
         private void VideRevuesCommandeZones()
         {
             txtbrefCommandeRevues.Text = "";

@@ -19,7 +19,7 @@ namespace Mediatek86.dal
         private static string connectionString = "server=localhost;user id=root;persistsecurityinfo=True;database=mediatek86";
 
         /// <summary>
-        /// Récupère et retourne les commandes de livres provenant de la BDD
+        /// Récupère et retourne les commandes de livres ou de dvds provenant de la BDD
         /// </summary>
         /// <returns>liste des commandes de documents</returns>
         public static List<CommandeDocument> GetCommandeDocument()
@@ -122,6 +122,34 @@ namespace Mediatek86.dal
             parameters2.Add("@idRevue", abonnementRevue.IdRevue);
             conn.ReqUpdate(req2, parameters2);
         }
+
+        /// <summary>
+        /// Récupère et retourne les abonnement à une revue provenant de la BDD
+        /// </summary>
+        /// <param name="refRevue"> référence de la revue </param>
+        /// <returns>liste des abonnements à une revue</returns>
+        public static List<AbonnementRevue> GetAbonnement(string refRevue)
+        {
+            List<AbonnementRevue> lesabonnementRevue = new List<AbonnementRevue>();
+            string req = "SELECT commande.id, commande.montant, commande.dateCommande,abonnement.dateFinAbonnement,abonnement.idRevue";
+            req += " FROM commande INNER JOIN abonnement ON commande.id = abonnement.id";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@id", refRevue}
+                };
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, parameters);
+            while (curs.Read())
+            {
+                AbonnementRevue abonnementRevues = new AbonnementRevue((string)curs.Field("id"), (double)curs.Field("montant"), (DateTime)curs.Field("dateCommande"), (DateTime)curs.Field("dateFinAbonnement"), (string)curs.Field("idRevue"));
+                lesabonnementRevue.Add(abonnementRevues);
+            }
+            curs.Close();
+            return lesabonnementRevue;
+        }
+
+
         /// <summary>
         /// Controle si l'utillisateur a le droit de se connecter (identifiant, mot de passe)
         /// </summary>

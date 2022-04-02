@@ -54,9 +54,7 @@ namespace Mediatek86.vue
                 if (profilUtilisateur.Libelle == "culture")
                 {
                     MessageBox.Show("Votre service est identifié comme relevant de la Culture, vos droits ne sont pas suffisants pour accéder à cette application", "Information");
-                    txtIdentifiant.Text = "";
-                    txtMotDePasse.Text = "";
-                    txtIdentifiant.Focus();
+                    Application.Exit();
                 }
                 else
                 {
