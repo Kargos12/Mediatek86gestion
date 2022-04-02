@@ -16,6 +16,8 @@ namespace Mediatek86.vue
 
         #region Variables globales
 
+
+
         private readonly Controle controle;
         const string ETATNEUF = "00001";
 
@@ -59,11 +61,23 @@ namespace Mediatek86.vue
         private DateTime dtFinCommandeRevue;
         private string refRevue;
 
+        /// <summary>
+        /// Gestion de l'ouverture de l'application
+        /// Si l'utilisateur est du service de prets : aches les ont
+        /// </summary>
+        /// <param name="controle"></param>
 
         internal FrmMediatek(Controle controle)
         {
             InitializeComponent();
             this.controle = controle;
+            if (controle.lesprofilUtilisateurs.Libelle == "prets")
+            {
+                tabOngletsApplication.TabPages.Remove(tabCommandeLivres);
+                tabOngletsApplication.TabPages.Remove(tabCommandeDvds);
+                tabOngletsApplication.TabPages.Remove(tabCommandeRevues);
+
+            }
         }
         #endregion
 

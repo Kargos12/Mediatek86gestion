@@ -12,11 +12,13 @@ using System.Windows.Forms;
 
 namespace Mediatek86.vue
 {
+    
     /// <summary>
     /// Fenêtre d'authentification
     /// </summary>
     public partial class FormAuthentification : Form
     {
+
         /// <summary>
         /// instance du controleur
         /// </summary>
@@ -32,8 +34,6 @@ namespace Mediatek86.vue
         /// Booléen, a vrai si l'authentification a réussie
         /// </summary>
         public bool AuthentificationOk { get; private set; }
-
-
 
         /// <summary>
         /// Evénement sur le bouton se connecter
@@ -57,10 +57,6 @@ namespace Mediatek86.vue
                     txtIdentifiant.Text = "";
                     txtMotDePasse.Text = "";
                     txtIdentifiant.Focus();
-                }
-                else if (profilUtilisateur.Libelle == "prets")
-                {
-                    gpbNouvelleCommandeCommandeLivres.Enabled = false;
                 }
                 else
                 {

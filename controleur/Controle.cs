@@ -9,7 +9,6 @@ namespace Mediatek86.controleur
 {
     public class Controle
     {
-
         /// <summary>
         /// fenêtre d'authentification
         /// </summary>

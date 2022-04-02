@@ -2192,7 +2192,6 @@ namespace Mediatek86.vue
             this.gpbNouvelleCommandeCommandeLivres.TabIndex = 1;
             this.gpbNouvelleCommandeCommandeLivres.TabStop = false;
             this.gpbNouvelleCommandeCommandeLivres.Text = "Commander ce livre";
-            this.gpbNouvelleCommandeCommandeLivres.Visible = false;
             // 
             // txtbrefCommandeLivres
             // 
@@ -3146,7 +3145,6 @@ namespace Mediatek86.vue
             this.grpInfosCommandeRevues.TabIndex = 0;
             this.grpInfosCommandeRevues.TabStop = false;
             this.grpInfosCommandeRevues.Text = "Informations sur la revue";
-
             // 
             // btnRechercheCommandeRevues
             // 
@@ -3559,7 +3557,6 @@ namespace Mediatek86.vue
         private System.Windows.Forms.PictureBox pcbReceptionExemplaireRevueImage;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.TabPage tabCommandeLivres;
-        private System.Windows.Forms.GroupBox grpInfosCommandeLivres;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label63;
@@ -3579,7 +3576,6 @@ namespace Mediatek86.vue
         private System.Windows.Forms.TextBox txtCheminImgCommandeLivres;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Button btnRechercheLivreCommandeLivres;
-        private System.Windows.Forms.GroupBox gpbNouvelleCommandeCommandeLivres;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label lblDateCommandeLivre;
         private System.Windows.Forms.Label label68;
@@ -3673,6 +3669,8 @@ namespace Mediatek86.vue
         private System.Windows.Forms.Button btnAnnulerCommandeRevues;
         private System.Windows.Forms.NumericUpDown nudMontantCommandeRevues;
         private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.GroupBox grpInfosCommandeLivres;
+        internal System.Windows.Forms.GroupBox gpbNouvelleCommandeCommandeLivres;
     }
 }
 
