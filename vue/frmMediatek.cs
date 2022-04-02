@@ -19,6 +19,7 @@ namespace Mediatek86.vue
         private readonly Controle controle;
         const string ETATNEUF = "00001";
 
+
         private readonly BindingSource bdgLivresListe = new BindingSource();
         private readonly BindingSource bdgDvdListe = new BindingSource();
         private readonly BindingSource bdgGenres = new BindingSource();
@@ -41,6 +42,7 @@ namespace Mediatek86.vue
         private List<Exemplaire> lesExemplaires = new List<Exemplaire>();
         private List<CommandeDocument> lescommandeDocument = new List<CommandeDocument>();
         private List<AbonnementRevue> lesabonnementRevue = new List<AbonnementRevue>();
+        private List<ProfilUtilisateur> lesprofilUtilisateurs = new List<ProfilUtilisateur>();
         private string etapescmd;
         private string idlivredvd;
         private string numCommandeLivre;
@@ -2102,6 +2104,8 @@ namespace Mediatek86.vue
             dtpCommandeFinAboRevues.Value = DateTime.Today;
             nudMontantCommandeRevues.Value = 0;
         }
+
         #endregion
+
     }
 }

@@ -262,6 +262,7 @@ namespace Mediatek86.vue
             this.tabCommandeRevues = new System.Windows.Forms.TabPage();
             this.gpbNouvelleCommandeRevues = new System.Windows.Forms.GroupBox();
             this.nudMontantCommandeRevues = new System.Windows.Forms.NumericUpDown();
+            this.dgvListeCommandeRevues = new System.Windows.Forms.DataGridView();
             this.label95 = new System.Windows.Forms.Label();
             this.btnAnnulerCommandeRevues = new System.Windows.Forms.Button();
             this.btnValiderCommandeRevues = new System.Windows.Forms.Button();
@@ -273,7 +274,6 @@ namespace Mediatek86.vue
             this.label92 = new System.Windows.Forms.Label();
             this.grpInfosCommandeRevues = new System.Windows.Forms.GroupBox();
             this.btnRechercheCommandeRevues = new System.Windows.Forms.Button();
-            this.dgvListeCommandeRevues = new System.Windows.Forms.DataGridView();
             this.txtCheminCommandeRevues = new System.Windows.Forms.TextBox();
             this.txtRayonCommandeRevues = new System.Windows.Forms.TextBox();
             this.txtPublicCommandeRevues = new System.Windows.Forms.TextBox();
@@ -335,8 +335,8 @@ namespace Mediatek86.vue
             this.tabCommandeRevues.SuspendLayout();
             this.gpbNouvelleCommandeRevues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMontantCommandeRevues)).BeginInit();
-            this.grpInfosCommandeRevues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListeCommandeRevues)).BeginInit();
+            this.grpInfosCommandeRevues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commandedocumentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediatek86DataSet)).BeginInit();
             this.SuspendLayout();
@@ -3029,6 +3029,16 @@ namespace Mediatek86.vue
             this.nudMontantCommandeRevues.Size = new System.Drawing.Size(104, 22);
             this.nudMontantCommandeRevues.TabIndex = 9;
             // 
+            // dgvListeCommandeRevues
+            // 
+            this.dgvListeCommandeRevues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListeCommandeRevues.Location = new System.Drawing.Point(19, 213);
+            this.dgvListeCommandeRevues.Name = "dgvListeCommandeRevues";
+            this.dgvListeCommandeRevues.RowHeadersWidth = 51;
+            this.dgvListeCommandeRevues.RowTemplate.Height = 24;
+            this.dgvListeCommandeRevues.Size = new System.Drawing.Size(472, 167);
+            this.dgvListeCommandeRevues.TabIndex = 1;
+            // 
             // label95
             // 
             this.label95.AutoSize = true;
@@ -3136,6 +3146,7 @@ namespace Mediatek86.vue
             this.grpInfosCommandeRevues.TabIndex = 0;
             this.grpInfosCommandeRevues.TabStop = false;
             this.grpInfosCommandeRevues.Text = "Informations sur la revue";
+
             // 
             // btnRechercheCommandeRevues
             // 
@@ -3148,16 +3159,6 @@ namespace Mediatek86.vue
             this.btnRechercheCommandeRevues.Text = "Rechercher";
             this.btnRechercheCommandeRevues.UseVisualStyleBackColor = true;
             this.btnRechercheCommandeRevues.Click += new System.EventHandler(this.btnRechercheCommandeRevues_Click);
-            // 
-            // dgvListeCommandeRevues
-            // 
-            this.dgvListeCommandeRevues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListeCommandeRevues.Location = new System.Drawing.Point(19, 213);
-            this.dgvListeCommandeRevues.Name = "dgvListeCommandeRevues";
-            this.dgvListeCommandeRevues.RowHeadersWidth = 51;
-            this.dgvListeCommandeRevues.RowTemplate.Height = 24;
-            this.dgvListeCommandeRevues.Size = new System.Drawing.Size(472, 167);
-            this.dgvListeCommandeRevues.TabIndex = 1;
             // 
             // txtCheminCommandeRevues
             // 
@@ -3398,9 +3399,9 @@ namespace Mediatek86.vue
             this.gpbNouvelleCommandeRevues.ResumeLayout(false);
             this.gpbNouvelleCommandeRevues.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMontantCommandeRevues)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeCommandeRevues)).EndInit();
             this.grpInfosCommandeRevues.ResumeLayout(false);
             this.grpInfosCommandeRevues.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListeCommandeRevues)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandedocumentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediatek86DataSet)).EndInit();
             this.ResumeLayout(false);

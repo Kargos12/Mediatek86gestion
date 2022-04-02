@@ -74,7 +74,7 @@ namespace Mediatek86.vue
             // 
             // btnConnection
             // 
-            this.btnConnection.Location = new System.Drawing.Point(164, 118);
+            this.btnConnection.Location = new System.Drawing.Point(24, 115);
             this.btnConnection.Name = "btnConnection";
             this.btnConnection.Size = new System.Drawing.Size(109, 36);
             this.btnConnection.TabIndex = 2;
@@ -84,7 +84,7 @@ namespace Mediatek86.vue
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(24, 118);
+            this.btnAnnuler.Location = new System.Drawing.Point(164, 115);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(109, 36);
             this.btnAnnuler.TabIndex = 3;

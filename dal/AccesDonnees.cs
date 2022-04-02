@@ -149,6 +149,33 @@ namespace Mediatek86.dal
                 return false;
             }
         }
+
+        /// <summary>
+        /// Retourne le service d'un utilisateur
+        /// </summary>
+        /// <param name="utilisateur">Le nom d'utilisateur concerné</param>
+        /// <param name="motdepasse">Le mot de passe de l'utilisateur</param>
+        /// <returns>Le service si l'utilisateur est trouvé dans la bdd, sinon null</returns>
+        public static ProfilUtilisateur Authentification(string identifiant, string motdepasse)
+        {
+            ProfilUtilisateur profilUtilisateur = null;
+            string req = "select s.id, s.libelle from utilisateur u join service s on u.idservice = s.id where u.identifiant = @identifiant and u.motdepasse = @motdepasse;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    {"@identifiant", identifiant},
+                    {"@motdepasse", motdepasse}
+                };
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, parameters);
+
+            while (curs.Read())
+            {
+                profilUtilisateur = new ProfilUtilisateur((string)curs.Field("id"), (string)curs.Field("libelle"));
+            }
+            curs.Close();
+            return profilUtilisateur;
+        }
+
     }
     
 }

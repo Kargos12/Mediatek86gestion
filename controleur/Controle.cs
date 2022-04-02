@@ -155,6 +155,25 @@ namespace Mediatek86.controleur
         }
 
         /// <summary>
+        /// Le service dont dépend l'utilisateur connecté
+        /// </summary>
+        public ProfilUtilisateur lesprofilUtilisateurs { get; private set; }
+
+        /// <summary>
+        /// Récupère le service de l'utilisateur qui essaye de se connecter depuis la bdd
+        /// Valorise la propriété 'service'
+        /// </summary>
+        /// <param name="identifiant">L'identifiant de l'utilisateur</param>
+        /// <param name="motdepasse">Le mot de passe de l'utilisateur</param>
+        /// <returns>Le service de l'utilisateur s'il est trouvé dans la bdd, et le mdp est correct. Sinon retourne null</returns>
+        public ProfilUtilisateur Authentification(string identifiant, string motdepasse)
+        {
+            ProfilUtilisateur profilUtilisateur = AccesDonnees.Authentification(identifiant, motdepasse);
+            lesprofilUtilisateurs = profilUtilisateur;
+            return profilUtilisateur;
+        }
+
+        /// <summary>
         /// Demande la vérification de l'authentification
         /// Si correct, alors ouvre la fenêtre principale
         /// </summary>
