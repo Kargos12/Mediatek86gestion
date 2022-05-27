@@ -99,8 +99,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mediatek86DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="metier\Commande.cs" />
     <Compile Include="metier\Dvd.cs" />
     <Compile Include="metier\Etat.cs" />
+    <Compile Include="metier\FinAbonnement.cs" />
     <Compile Include="metier\LivreDvd.cs" />
     <Compile Include="metier\Public.cs" />
     <Compile Include="metier\Rayon.cs" />
@@ -116,6 +118,12 @@
     </Compile>
     <Compile Include="vue\FormAuthentification.Designer.cs">
       <DependentUpon>FormAuthentification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vue\FrmAlerteAbonnements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vue\FrmAlerteAbonnements.Designer.cs">
+      <DependentUpon>FrmAlerteAbonnements.cs</DependentUpon>
     </Compile>
     <Compile Include="vue\FrmMediatek.cs">
       <SubType>Form</SubType>
@@ -137,6 +145,9 @@
     </Compile>
     <EmbeddedResource Include="vue\FormAuthentification.resx">
       <DependentUpon>FormAuthentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vue\FrmAlerteAbonnements.resx">
+      <DependentUpon>FrmAlerteAbonnements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vue\FrmMediatek.resx">
       <DependentUpon>FrmMediatek.cs</DependentUpon>

@@ -4,6 +4,7 @@ using Mediatek86.metier;
 using Mediatek86.vue;
 using Mediatek86.dal;
 using System;
+using System.Linq;
 
 namespace Mediatek86.controleur
 {
@@ -96,9 +97,9 @@ namespace Mediatek86.controleur
         /// récupère les exemplaires d'une revue
         /// </summary>
         /// <returns>Collection d'objets Exemplaire</returns>
-        public List<Exemplaire> GetExemplairesRevue(string idDocuement)
+        public List<Exemplaire> GetExemplairesRevue(string idDocument)
         {
-            return Dao.GetExemplairesRevue(idDocuement);
+            return Dao.GetExemplairesRevue(idDocument);
         }
 
         /// <summary>
@@ -163,6 +164,36 @@ namespace Mediatek86.controleur
         }
 
         /// <summary>
+        /// Vérification si la suppression d'un abonnement est possible
+        /// uniquement si l'abonnement n'est lié à aucun exemplaire
+        /// </summary>
+        /// <param name="abonnement">Abonnement concerné</param>
+        /// <returns>True si la suppression est possible</returns>
+        public bool CheckSupprimerAbonnement(AbonnementRevue abonnementRevue)
+        {
+            List<Exemplaire> lesExemplaires = GetExemplairesRevue(abonnementRevue.IdRevue);
+            bool suppression = false;
+
+            foreach (Exemplaire exemplaire in lesExemplaires.Where(ex => ParutionDansAbonnement(abonnementRevue.DateCommande, abonnementRevue.DateFinAbonnement, ex.DateAchat)))
+            {
+                suppression = true;
+            }
+            return !suppression;
+        }
+
+        /// <summary>
+        /// Teste si dateParution est compris entre dateCommande et dateFinAbonnement
+        /// </summary>
+        /// <param name="dateCommande">Date de commande d'un abonnement</param>
+        /// <param name="dateFinAbonnement">Date de fin d'un abonnement</param>
+        /// <param name="dateParution">Date de parution d'un exemplaire</param>
+        /// <returns>True si la date est comprise</returns>
+        public bool ParutionDansAbonnement(DateTime dateCommande, DateTime dateFinAbonnement, DateTime dateParution)
+        {
+            return (DateTime.Compare(dateCommande, dateParution) < 0 && DateTime.Compare(dateParution, dateFinAbonnement) < 0);
+        }
+
+        /// <summary>
         /// Le service dont dépend l'utilisateur connecté
         /// </summary>
         public ProfilUtilisateur lesprofilUtilisateurs { get; private set; }
@@ -200,6 +231,25 @@ namespace Mediatek86.controleur
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Récupère les abonnements qui expirent dans moins de 30 jours
+        /// </summary>
+        /// <returns>Collection d'objets de type Abonnement</returns>
+        public List<FinAbonnement> GetFinAbonnement()
+        {
+            return Dao.GetFinAbonnement();
+        }
+
+        /// <summary>
+        /// Requête suppression abonnement
+        /// </summary>
+        /// <param name="idAbonnement">L'identifiant de l'abonnement à supprimer</param>
+        /// <returns>True si l'opération a réussi, sinon false</returns>
+        public bool SupprimerAbonnement(string idAbonnementRevue)
+        {
+            return Dao.SupprimerAbonnement(idAbonnementRevue);
         }
     }
 

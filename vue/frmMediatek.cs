@@ -64,6 +64,7 @@ namespace Mediatek86.vue
         /// <summary>
         /// Gestion de l'ouverture de l'application
         /// Si l'utilisateur est du service de prets : caches les onglets de gestion de commandes
+        /// Si l'utilisateur est du service administratif : affiche l'alerte sur les abonnements
         /// </summary>
         /// <param name="controle"></param>
 
@@ -76,6 +77,14 @@ namespace Mediatek86.vue
                 tabOngletsApplication.TabPages.Remove(tabCommandeLivres);
                 tabOngletsApplication.TabPages.Remove(tabCommandeDvds);
                 tabOngletsApplication.TabPages.Remove(tabCommandeRevues);
+            }
+            if (controle.lesprofilUtilisateurs.Libelle == "administratif")
+            {
+                FrmAlerteAbonnements alerteFinAbonnements = new FrmAlerteAbonnements(controle)
+                {
+                    StartPosition = FormStartPosition.CenterParent
+                };
+                alerteFinAbonnements.ShowDialog();
             }
         }
         #endregion
@@ -2043,7 +2052,6 @@ namespace Mediatek86.vue
         private void RemplirRevuesListeONCommande(List<AbonnementRevue> lesabonnementRevues)
         {
             
-
             bdgListeCommandeRevues.DataSource = lesabonnementRevues;
             dgvListeCommandeRevues.DataSource = bdgListeCommandeRevues;
             dgvListeCommandeRevues.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -2105,6 +2113,29 @@ namespace Mediatek86.vue
             txtbrefCommandeRevues.Text = "";
             dtpCommandeFinAboRevues.Value = DateTime.Today;
             nudMontantCommandeRevues.Value = 0;
+        }
+
+        private void btnSupprimerCommandeRevues_Click(object sender, EventArgs e)
+        {
+            AbonnementRevue abonnementrevue = (AbonnementRevue)bdgListeCommandeRevues.List[bdgListeCommandeRevues.Position];
+            if (controle.CheckSupprimerAbonnement(abonnementrevue))
+            {
+                if (MessageBox.Show("Voulez-vous vraiment supprimer cet anonnement ?", "Suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (controle.SupprimerAbonnement(abonnementrevue.Id))
+                    {
+                        RemplirRevuesListeONCommande(lesabonnementRevue);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Une erreur s'est produite.", "Erreur");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossible de supprimer cet abonnement car il est lié à des exemplaires.", "Information");
+            }
         }
 
         #endregion

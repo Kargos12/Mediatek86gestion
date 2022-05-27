@@ -293,6 +293,7 @@ namespace Mediatek86.vue
             this.commandedocumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mediatek86DataSet = new Mediatek86.mediatek86DataSet();
             this.commandedocumentTableAdapter = new Mediatek86.mediatek86DataSetTableAdapters.commandedocumentTableAdapter();
+            this.btnSupprimerCommandeRevues = new System.Windows.Forms.Button();
             this.tabOngletsApplication.SuspendLayout();
             this.tabLivres.SuspendLayout();
             this.grpLivresInfos.SuspendLayout();
@@ -3003,6 +3004,7 @@ namespace Mediatek86.vue
             // 
             // gpbNouvelleCommandeRevues
             // 
+            this.gpbNouvelleCommandeRevues.Controls.Add(this.btnSupprimerCommandeRevues);
             this.gpbNouvelleCommandeRevues.Controls.Add(this.nudMontantCommandeRevues);
             this.gpbNouvelleCommandeRevues.Controls.Add(this.dgvListeCommandeRevues);
             this.gpbNouvelleCommandeRevues.Controls.Add(this.label95);
@@ -3049,7 +3051,7 @@ namespace Mediatek86.vue
             // 
             // btnAnnulerCommandeRevues
             // 
-            this.btnAnnulerCommandeRevues.Location = new System.Drawing.Point(386, 119);
+            this.btnAnnulerCommandeRevues.Location = new System.Drawing.Point(377, 94);
             this.btnAnnulerCommandeRevues.Name = "btnAnnulerCommandeRevues";
             this.btnAnnulerCommandeRevues.Size = new System.Drawing.Size(95, 36);
             this.btnAnnulerCommandeRevues.TabIndex = 7;
@@ -3059,7 +3061,7 @@ namespace Mediatek86.vue
             // 
             // btnValiderCommandeRevues
             // 
-            this.btnValiderCommandeRevues.Location = new System.Drawing.Point(386, 61);
+            this.btnValiderCommandeRevues.Location = new System.Drawing.Point(377, 34);
             this.btnValiderCommandeRevues.Name = "btnValiderCommandeRevues";
             this.btnValiderCommandeRevues.Size = new System.Drawing.Size(95, 36);
             this.btnValiderCommandeRevues.TabIndex = 6;
@@ -3330,6 +3332,16 @@ namespace Mediatek86.vue
             // commandedocumentTableAdapter
             // 
             this.commandedocumentTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnSupprimerCommandeRevues
+            // 
+            this.btnSupprimerCommandeRevues.Location = new System.Drawing.Point(377, 146);
+            this.btnSupprimerCommandeRevues.Name = "btnSupprimerCommandeRevues";
+            this.btnSupprimerCommandeRevues.Size = new System.Drawing.Size(95, 36);
+            this.btnSupprimerCommandeRevues.TabIndex = 10;
+            this.btnSupprimerCommandeRevues.Text = "Suprimer";
+            this.btnSupprimerCommandeRevues.UseVisualStyleBackColor = true;
+            this.btnSupprimerCommandeRevues.Click += new System.EventHandler(this.btnSupprimerCommandeRevues_Click);
             // 
             // FrmMediatek
             // 
@@ -3671,6 +3683,7 @@ namespace Mediatek86.vue
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.GroupBox grpInfosCommandeLivres;
         internal System.Windows.Forms.GroupBox gpbNouvelleCommandeCommandeLivres;
+        private System.Windows.Forms.Button btnSupprimerCommandeRevues;
     }
 }
 

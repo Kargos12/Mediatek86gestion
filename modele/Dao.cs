@@ -261,5 +261,59 @@ namespace Mediatek86.modele
                 return false;
             }
         }
+
+        /// <summary>
+        /// Liste de la fin d'un abonnement
+        /// </summary>
+        /// <returns>Retour fin d'abonnement</returns>
+        public static List<FinAbonnement> GetFinAbonnement()
+        {
+            List<FinAbonnement> lesFinAbonnement = new List<FinAbonnement>();
+            string req = "call  CheckAbonnement()";
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+
+            while (curs.Read())
+            {
+                DateTime dateFinAbonnement = (DateTime)curs.Field("dateFinAbonnement");
+                string idRevue = (string)curs.Field("idRevue");
+                string titreRevue = (string)curs.Field("titre");
+
+                FinAbonnement finAbonnement = new FinAbonnement(dateFinAbonnement, idRevue, titreRevue);
+                lesFinAbonnement.Add(finAbonnement);
+            }
+            curs.Close();
+
+            return lesFinAbonnement;
+        }
+        /// <summary>
+        /// Requête pour supprimer un abonnement
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>True si la suppression est faites</returns>
+        public static bool SupprimerAbonnement(string id)
+        {
+            try
+            {
+                List<string> requetes = new List<string>
+                {
+                    "delete from abonnement where id=@id",
+                    "delete from commande where id=@id"
+                };
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    {"@id", id },
+                };
+                BddMySql curs = BddMySql.GetInstance(connectionString);
+                curs.ReqUpdate(requetes, parameters);
+                curs.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
