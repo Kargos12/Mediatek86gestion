@@ -5,6 +5,9 @@ using MySql.Data.MySqlClient;
 
 namespace Mediatek86.bdd
 {
+    /// <summary>
+    /// Classe gérant la BDD
+    /// </summary>
     public class BddMySql
     {
         /// <summary>
@@ -57,6 +60,7 @@ namespace Mediatek86.bdd
         /// Exécute une requête type "select" et valorise le curseur
         /// </summary>
         /// <param name="stringQuery">requête select</param>
+        /// <param name="parameters"></param>
         public void ReqSelect(string stringQuery, Dictionary<string, object> parameters)
         {
             MySqlCommand command;

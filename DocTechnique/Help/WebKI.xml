@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AbonnementRevue class">
+    <HelpKINode Title="AbonnementRevue Class" Url="html/b16cdc89-6825-496d-3a61-31a897f0f9c6.htm" />
+    <HelpKINode Title="constructor" Url="html/76c15d76-827c-22dc-6a8b-7b019da0f282.htm" />
+    <HelpKINode Title="methods" Url="html/805bc147-9b07-299d-5ba9-f9f43e4292b3.htm" />
+    <HelpKINode Title="properties" Url="html/b45fc3df-864f-d315-f34e-c29c32e94403.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AbonnementRevue.AbonnementRevue constructor" Url="html/76c15d76-827c-22dc-6a8b-7b019da0f282.htm" />
+  <HelpKINode Title="AbonnementRevue.DateCommande property" Url="html/95285a5c-4c2d-3d34-97a6-6863ad967efd.htm" />
+  <HelpKINode Title="AbonnementRevue.DateFinAbonnement property" Url="html/5c642c9a-b3b2-d6b7-2aa5-4d5e7104ecb1.htm" />
+  <HelpKINode Title="AbonnementRevue.Id property" Url="html/f6de752c-38c3-ff6f-4621-02cb0ee61312.htm" />
+  <HelpKINode Title="AbonnementRevue.IdRevue property" Url="html/8a15f783-b34c-74bb-88fb-7d420f933431.htm" />
+  <HelpKINode Title="AbonnementRevue.Montant property" Url="html/e9435b94-d215-096c-4840-9431f66054e3.htm" />
+  <HelpKINode Title="Action property" Url="html/adaec72e-8447-65eb-e5ee-7c9a6bea04b5.htm" />
+  <HelpKINode Title="Adapter property" Url="html/5bd0d10b-be7c-9dc5-6a22-7f46bc422ee6.htm" />
+  <HelpKINode Title="AddAbonnementRevue method" Url="html/9121b856-ebae-a330-d09b-e50a2552fcd5.htm" />
+  <HelpKINode Title="AddCommandeDocument method" Url="html/48afb7c1-f8b4-88d9-00d4-01ca451fead7.htm" />
+  <HelpKINode Title="AddcommandedocumentRow method" Url="html/704ee956-31b0-a16c-32c6-a4b07472b848.htm" />
+  <HelpKINode Title="Auteur property" Url="html/7f279122-f451-88b1-bfda-12de3ce12121.htm" />
+  <HelpKINode Title="Authentification method" Url="html/affa5ff7-bf24-0b43-0e5e-27a9918ac5fe.htm" />
+  <HelpKINode Title="AuthentificationOk property" Url="html/4b116a59-7126-3e96-1aa7-5c43ec3fd98e.htm" />
+  <HelpKINode Title="BackupDataSetBeforeUpdate property" Url="html/cfefc351-e210-bc91-8711-db9fdd60f382.htm" />
+  <HelpKINode Title="BddMySql class">
+    <HelpKINode Title="BddMySql Class" Url="html/9fffc05c-9104-fd54-2d3b-550525a779fb.htm" />
+    <HelpKINode Title="methods" Url="html/966a055c-9206-9057-e5a9-f6be0b4726b8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BddMySql.Close method" Url="html/5a929ac8-26da-376e-9b4c-7012e8f52d0f.htm" />
+  <HelpKINode Title="BddMySql.Field method" Url="html/f985795d-b52c-07be-5a3f-f42bda90fe73.htm" />
+  <HelpKINode Title="BddMySql.GetInstance method" Url="html/e84ee0ce-45ba-e9e2-f1d5-6714ed4ca2a9.htm" />
+  <HelpKINode Title="BddMySql.Read method" Url="html/17a15201-b7dc-cb2c-b3b8-6ef1afe65033.htm" />
+  <HelpKINode Title="BddMySql.ReqSelect method" Url="html/a34a3755-c9e2-8567-965d-762124decd37.htm" />
+  <HelpKINode Title="BddMySql.ReqUpdate method" Url="html/a24a7fed-0628-fec2-ca1b-269f6addd226.htm" />
+  <HelpKINode Title="Categorie class">
+    <HelpKINode Title="Categorie Class" Url="html/29619a1b-a306-4a4c-3d1a-6d930441d494.htm" />
+    <HelpKINode Title="constructor" Url="html/b6503537-47a4-5525-f4b2-0da7d08a1e12.htm" />
+    <HelpKINode Title="methods" Url="html/abe9839f-d207-c1a8-2d75-4337e32999a2.htm" />
+    <HelpKINode Title="properties" Url="html/d0092eeb-73cb-cde0-19e1-d5701cf9fb2d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Categorie.Categorie constructor" Url="html/b6503537-47a4-5525-f4b2-0da7d08a1e12.htm" />
+  <HelpKINode Title="Categorie.Id property" Url="html/76e267fb-eb79-2b2c-40b7-bce47611b2b7.htm" />
+  <HelpKINode Title="Categorie.Libelle property" Url="html/99807cbb-de95-279e-fb32-ad34c4252c3c.htm" />
+  <HelpKINode Title="Categorie.ToString method" Url="html/afd30383-9b17-f76e-45d7-c097e5a3a093.htm" />
+  <HelpKINode Title="CheckSupprimerAbonnement method" Url="html/6f1a51e5-8618-2855-d884-e1bd07a4e73e.htm" />
+  <HelpKINode Title="ClearBeforeFill property" Url="html/73d1d044-a4b8-f155-8ccd-742d4350b997.htm" />
+  <HelpKINode Title="Clone method">
+    <HelpKINode Title="mediatek86DataSet.Clone Method " Url="html/218e4d2d-4196-2c1c-3c31-45fe5262bbbe.htm" />
+    <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.Clone Method " Url="html/65058e7a-7c9f-5b70-4802-975b70985fca.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Close method" Url="html/5a929ac8-26da-376e-9b4c-7012e8f52d0f.htm" />
+  <HelpKINode Title="Collection property" Url="html/a961fd45-3cea-04b2-ad90-a69fc8b5bc09.htm" />
+  <HelpKINode Title="CommandCollection property" Url="html/077e9bc8-6b3c-db1b-2c50-79f2efa4095c.htm" />
+  <HelpKINode Title="Commande class">
+    <HelpKINode Title="Commande Class" Url="html/f1aab7d1-1e97-f81a-da15-ef9db568532f.htm" />
+    <HelpKINode Title="constructor" Url="html/5f40ca2c-53ef-71c2-d7e8-419054829e2e.htm" />
+    <HelpKINode Title="methods" Url="html/ebaea093-c622-f512-8a7f-5bf4b5521a9e.htm" />
+    <HelpKINode Title="properties" Url="html/fff9e9ff-9ecd-61c6-4a4e-46a7a18298b9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Commande.Commande constructor" Url="html/5f40ca2c-53ef-71c2-d7e8-419054829e2e.htm" />
+  <HelpKINode Title="Commande.DateCommande property" Url="html/f473c5d5-0fba-f231-a1e0-2e2c9fbbb5cf.htm" />
+  <HelpKINode Title="Commande.Id property" Url="html/c38021c1-5983-0b9f-3d95-e16b48a9b517.htm" />
+  <HelpKINode Title="Commande.Montant property" Url="html/653f555e-dac3-dad5-94e9-0c4fc3d61868.htm" />
+  <HelpKINode Title="CommandeDocument class">
+    <HelpKINode Title="CommandeDocument Class" Url="html/dff1083f-59b5-ccd9-1a42-575c4eff333e.htm" />
+    <HelpKINode Title="constructor" Url="html/bce8217e-75cf-002c-14ca-d6c703bf17e2.htm" />
+    <HelpKINode Title="methods" Url="html/1ad4e13d-b7ea-ee25-ce83-7c0f49622b71.htm" />
+    <HelpKINode Title="properties" Url="html/3e9e7f3e-4b9e-6e77-db18-44529b63c525.htm" />
+  </HelpKINode>
+  <HelpKINode Title="commandedocument property" Url="html/ccfdae92-b857-dd2f-011c-b9b2618d7690.htm" />
+  <HelpKINode Title="CommandeDocument.CommandeDocument constructor" Url="html/bce8217e-75cf-002c-14ca-d6c703bf17e2.htm" />
+  <HelpKINode Title="CommandeDocument.DateCommande property" Url="html/7b5efdc0-2f0b-719e-3953-08be22f54fa2.htm" />
+  <HelpKINode Title="CommandeDocument.Etapes property" Url="html/58412809-82c2-a7ae-351e-dfc1775a6310.htm" />
+  <HelpKINode Title="CommandeDocument.Id property" Url="html/6f8826bf-7fea-2e7b-82bc-dffd15cb5f93.htm" />
+  <HelpKINode Title="CommandeDocument.IdLivreDvd property" Url="html/63704679-9fa0-037c-f755-1e4b1193cbdf.htm" />
+  <HelpKINode Title="CommandeDocument.Montant property" Url="html/2251ff49-14f5-cdd9-c642-4880d2f94448.htm" />
+  <HelpKINode Title="CommandeDocument.NbExemplaire property" Url="html/ce9a0d56-a942-3225-3933-8562fb3d2ba1.htm" />
+  <HelpKINode Title="commandedocumentDataTable class">
+    <HelpKINode Title="events" Url="html/142e4677-5ea4-5dc9-4769-17a458904b8e.htm" />
+    <HelpKINode Title="fields" Url="html/494b8fd7-63ce-fc2f-5714-4610ac42c6fa.htm" />
+    <HelpKINode Title="methods" Url="html/68570467-3ff9-83f3-cfec-0b605a321093.htm" />
+    <HelpKINode Title="properties" Url="html/0b0e4928-d2d6-9cfd-7114-f33037adb4e9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="commandedocumentRow class">
+    <HelpKINode Title="methods" Url="html/1592a0a9-9362-5859-ba7b-d79fc8ed9fe6.htm" />
+    <HelpKINode Title="properties" Url="html/b894e1ab-ed6e-242f-68a9-5bd6191fb7ff.htm" />
+  </HelpKINode>
+  <HelpKINode Title="commandedocumentRowChanged event" Url="html/6274b8bd-6bd4-288f-5130-9641a487942a.htm" />
+  <HelpKINode Title="commandedocumentRowChangeEvent class">
+    <HelpKINode Title="methods" Url="html/e4fc1871-deb0-f882-3ba6-9fa33b284ba8.htm" />
+    <HelpKINode Title="properties" Url="html/660296eb-bca2-c0b4-0179-f74939f53eaa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="commandedocumentRowChanging event" Url="html/48b06402-71c7-d7ee-4c3a-bfedb0372d70.htm" />
+  <HelpKINode Title="commandedocumentRowDeleted event" Url="html/cdb2319b-33d8-37f0-3b7c-6e24c86f0c43.htm" />
+  <HelpKINode Title="commandedocumentRowDeleting event" Url="html/c84322f3-664c-80b5-1470-3bb41614833e.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter class">
+    <HelpKINode Title="commandedocumentTableAdapter Class" Url="html/3fdd6c1c-1e49-4fef-9fb3-76bfd04273e5.htm" />
+    <HelpKINode Title="constructor" Url="html/1ce3de17-66f2-08f1-f703-7d9b8351a48d.htm" />
+    <HelpKINode Title="events" Url="html/89afe6df-8729-c31b-f1a0-55c6ffb18962.htm" />
+    <HelpKINode Title="methods" Url="html/2f905a58-ba2d-1e09-669c-704c7dd815d8.htm" />
+    <HelpKINode Title="properties" Url="html/b9b6672b-1f18-9919-05e6-135a94437d58.htm" />
+  </HelpKINode>
+  <HelpKINode Title="commandedocumentTableAdapter property" Url="html/7fd802d3-ba37-e056-402d-4c3723ae9b23.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.Adapter property" Url="html/5bd0d10b-be7c-9dc5-6a22-7f46bc422ee6.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.ClearBeforeFill property" Url="html/73d1d044-a4b8-f155-8ccd-742d4350b997.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.CommandCollection property" Url="html/077e9bc8-6b3c-db1b-2c50-79f2efa4095c.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.commandedocumentTableAdapter constructor" Url="html/1ce3de17-66f2-08f1-f703-7d9b8351a48d.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.Delete method" Url="html/1f22b91d-4deb-7786-a599-fe73385a87f1.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.Fill method" Url="html/110bdae8-b0c4-ad7a-1c51-a8e1bef7cced.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.GetData method" Url="html/7218e53a-fbcd-8ba2-657a-962793c10f5e.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.Insert method" Url="html/6d0e205a-f9ae-a9a9-df3d-6817c0629d00.htm" />
+  <HelpKINode Title="commandedocumentTableAdapter.Update method" Url="html/99a1a366-454b-ed3d-755a-3c668d896cfa.htm" />
+  <HelpKINode Title="Connection property" Url="html/38d965f5-d190-d698-f90f-ea9f62838173.htm" />
+  <HelpKINode Title="Controle class">
+    <HelpKINode Title="Controle Class" Url="html/c8a8a4ea-a5d3-f296-8e13-07f59c341f68.htm" />
+    <HelpKINode Title="constructor" Url="html/f85418e0-5dc8-3adc-caa3-8dc2950673ac.htm" />
+    <HelpKINode Title="fields" Url="html/342be3a4-b6c7-e6d5-52ae-be14b4e0a762.htm" />
+    <HelpKINode Title="methods" Url="html/cdec2155-9495-228f-f093-16e6039bee48.htm" />
+    <HelpKINode Title="properties" Url="html/cae796b3-eddc-5867-ae0c-496a04953863.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Controle.AddAbonnementRevue method" Url="html/9121b856-ebae-a330-d09b-e50a2552fcd5.htm" />
+  <HelpKINode Title="Controle.AddCommandeDocument method" Url="html/48afb7c1-f8b4-88d9-00d4-01ca451fead7.htm" />
+  <HelpKINode Title="Controle.Authentification method" Url="html/affa5ff7-bf24-0b43-0e5e-27a9918ac5fe.htm" />
+  <HelpKINode Title="Controle.CheckSupprimerAbonnement method" Url="html/6f1a51e5-8618-2855-d884-e1bd07a4e73e.htm" />
+  <HelpKINode Title="Controle.Controle constructor" Url="html/f85418e0-5dc8-3adc-caa3-8dc2950673ac.htm" />
+  <HelpKINode Title="Controle.ControleAuthentification method" Url="html/5fe26beb-8e94-deb0-d915-a44a8224a310.htm" />
+  <HelpKINode Title="Controle.CreerExemplaire method" Url="html/284061ae-81b2-93d0-0cdc-92740917bbc3.htm" />
+  <HelpKINode Title="Controle.DelCommandeDocument method" Url="html/a23c88eb-2098-4b65-f2d3-37745cc72c9e.htm" />
+  <HelpKINode Title="Controle.formAuthentification field" Url="html/5a43fa0d-9efd-d587-e3b0-e8660303bb58.htm" />
+  <HelpKINode Title="Controle.GetAllDvd method" Url="html/3f7f6782-8be7-bb29-bcf3-1fcba15cb729.htm" />
+  <HelpKINode Title="Controle.GetAllGenres method" Url="html/37edab45-99ba-b8ae-1cf0-555bd543434f.htm" />
+  <HelpKINode Title="Controle.GetAllLivres method" Url="html/51e01a64-8ac2-42f2-ce1a-f5b541c66311.htm" />
+  <HelpKINode Title="Controle.GetAllPublics method" Url="html/f3825671-69ac-be9c-f213-9170281d9caf.htm" />
+  <HelpKINode Title="Controle.GetAllRayons method" Url="html/1d85a4d9-a8c5-61cc-9fde-9559433cd77c.htm" />
+  <HelpKINode Title="Controle.GetAllRevues method" Url="html/95869873-dfc7-beca-6d47-aa90493da211.htm" />
+  <HelpKINode Title="Controle.GetExemplairesRevue method" Url="html/a6679cb4-158f-12c6-b83c-1f0d31023ccd.htm" />
+  <HelpKINode Title="Controle.GetFinAbonnement method" Url="html/cf8d5099-ecb9-83ba-b87f-97800a32f4eb.htm" />
+  <HelpKINode Title="Controle.GetLesAbonnement method" Url="html/114523ca-a8d1-76e8-f4eb-e351e3667fdc.htm" />
+  <HelpKINode Title="Controle.GetLesCommandeDocument method" Url="html/9d087046-1bfb-234c-24cd-69650395cba9.htm" />
+  <HelpKINode Title="Controle.lesprofilUtilisateurs property" Url="html/8f59c861-7b9f-6f39-3fae-4da8bea6516f.htm" />
+  <HelpKINode Title="Controle.ParutionDansAbonnement method" Url="html/5152b840-2537-d3ee-2733-42514b9419e8.htm" />
+  <HelpKINode Title="Controle.SupprimerAbonnement method" Url="html/3ce4d699-fba1-84a8-7d0c-58304621733d.htm" />
+  <HelpKINode Title="Controle.UpdateEtapes method" Url="html/891731b6-e8a7-b442-268f-ebbe3914bebf.htm" />
+  <HelpKINode Title="ControleAuthentification method" Url="html/5fe26beb-8e94-deb0-d915-a44a8224a310.htm" />
+  <HelpKINode Title="Count property" Url="html/f3060882-8cc5-998d-ba83-a69a5276299d.htm" />
+  <HelpKINode Title="CreateInstance method" Url="html/ba3f0ee8-5cf5-24fd-120e-e9758e8e0bff.htm" />
+  <HelpKINode Title="CreerExemplaire method">
+    <HelpKINode Title="Controle.CreerExemplaire Method " Url="html/284061ae-81b2-93d0-0cdc-92740917bbc3.htm" />
+    <HelpKINode Title="Dao.CreerExemplaire Method " Url="html/edf2f625-81fc-8d0f-bfce-b03d15424325.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dao class">
+    <HelpKINode Title="Dao Class" Url="html/fede85f2-6562-c89b-9a54-75203b747c23.htm" />
+    <HelpKINode Title="methods" Url="html/312ee80a-7677-5bab-427b-d59ab972c236.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dao.CreerExemplaire method" Url="html/edf2f625-81fc-8d0f-bfce-b03d15424325.htm" />
+  <HelpKINode Title="Dao.GetAllDvd method" Url="html/74023196-6fb6-b4fb-e00f-1bcbdce0a132.htm" />
+  <HelpKINode Title="Dao.GetAllGenres method" Url="html/09091cf7-2b69-cd4c-6fac-d5dce508fc26.htm" />
+  <HelpKINode Title="Dao.GetAllLivres method" Url="html/4b2090e1-bfb8-4414-1bf6-17aa6e69c9cb.htm" />
+  <HelpKINode Title="Dao.GetAllPublics method" Url="html/8e432a87-015b-918c-c076-759f85f49e03.htm" />
+  <HelpKINode Title="Dao.GetAllRayons method" Url="html/fec4facc-7acc-9f60-a84f-f0191adaf50e.htm" />
+  <HelpKINode Title="Dao.GetAllRevues method" Url="html/1b0f9945-c777-254d-05be-f5d20513c66e.htm" />
+  <HelpKINode Title="Dao.GetExemplairesRevue method" Url="html/338bcd33-f648-5523-c36f-d9ddb9674dc5.htm" />
+  <HelpKINode Title="Dao.GetFinAbonnement method" Url="html/f08c4def-5c02-1c0b-5b00-aa92a184df88.htm" />
+  <HelpKINode Title="Dao.SupprimerAbonnement method" Url="html/4b2750c3-87e7-6ed7-68a9-89ca04f8d366.htm" />
+  <HelpKINode Title="DateAchat property" Url="html/99f400c8-ec32-8e93-4bff-4bd7f58542e0.htm" />
+  <HelpKINode Title="DateCommande property">
+    <HelpKINode Title="AbonnementRevue.DateCommande Property " Url="html/95285a5c-4c2d-3d34-97a6-6863ad967efd.htm" />
+    <HelpKINode Title="Commande.DateCommande Property " Url="html/f473c5d5-0fba-f231-a1e0-2e2c9fbbb5cf.htm" />
+    <HelpKINode Title="CommandeDocument.DateCommande Property " Url="html/7b5efdc0-2f0b-719e-3953-08be22f54fa2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DateFinAbonnement property">
+    <HelpKINode Title="AbonnementRevue.DateFinAbonnement Property " Url="html/5c642c9a-b3b2-d6b7-2aa5-4d5e7104ecb1.htm" />
+    <HelpKINode Title="FinAbonnement.DateFinAbonnement Property " Url="html/bee48a8f-78e0-5d11-f032-57fe45ae684a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DelaiMiseADispo property" Url="html/057d45af-d1db-7b81-0285-b30d88cf3a58.htm" />
+  <HelpKINode Title="DelCommandeDocument method" Url="html/a23c88eb-2098-4b65-f2d3-37745cc72c9e.htm" />
+  <HelpKINode Title="Delete method" Url="html/1f22b91d-4deb-7786-a599-fe73385a87f1.htm" />
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="FormAuthentification.Dispose Method " Url="html/34619234-be7a-9c21-43a1-ab9e8c7be9c1.htm" />
+    <HelpKINode Title="FrmAlerteAbonnements.Dispose Method " Url="html/4897456e-81fa-565f-144c-05dbcc6aeb57.htm" />
+    <HelpKINode Title="FrmMediatek.Dispose Method " Url="html/dc2e6cc8-12c2-e27a-0d24-4d9ae1972eba.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Document class">
+    <HelpKINode Title="Document Class" Url="html/28ca3727-a757-52a0-b622-abd3d8015bc1.htm" />
+    <HelpKINode Title="constructor" Url="html/bb20b169-a00e-16e9-bd08-a96107e53f32.htm" />
+    <HelpKINode Title="methods" Url="html/c4b1014d-09f6-2c96-9a74-f0139fa61a8c.htm" />
+    <HelpKINode Title="properties" Url="html/923a73a6-3d97-dca1-aec6-5014a7023b89.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Document.Document constructor" Url="html/bb20b169-a00e-16e9-bd08-a96107e53f32.htm" />
+  <HelpKINode Title="Document.Genre property" Url="html/3953185f-4bea-0189-ef13-e105f21d6c18.htm" />
+  <HelpKINode Title="Document.Id property" Url="html/e604ea8f-ddca-a52b-0ae4-3948de17984a.htm" />
+  <HelpKINode Title="Document.IdGenre property" Url="html/065293c4-7af7-ad58-be69-b17066f28c07.htm" />
+  <HelpKINode Title="Document.IdPublic property" Url="html/6be57152-39f6-9428-2c44-c18a15dbb044.htm" />
+  <HelpKINode Title="Document.IdRayon property" Url="html/18a47ba4-a41a-c5ec-7d80-5e2c9266d41c.htm" />
+  <HelpKINode Title="Document.Image property" Url="html/71602590-9921-8fe8-26ed-ff6d4a7b627a.htm" />
+  <HelpKINode Title="Document.Public property" Url="html/d8fea443-9854-504f-cd83-2c07b5a3302c.htm" />
+  <HelpKINode Title="Document.Rayon property" Url="html/8d9d4f7c-e180-e19b-5a96-07070ea027cb.htm" />
+  <HelpKINode Title="Document.Titre property" Url="html/43bf0b30-4462-df6b-4b06-7a223fee6580.htm" />
+  <HelpKINode Title="Duree property" Url="html/639c5a12-5ffe-59a8-0476-27a864afff86.htm" />
+  <HelpKINode Title="Dvd class">
+    <HelpKINode Title="Dvd Class" Url="html/af27768b-6e54-9cf0-e430-0c8af84f69c9.htm" />
+    <HelpKINode Title="constructor" Url="html/ba10d67c-dd8d-59b6-e3fc-ae58f2977896.htm" />
+    <HelpKINode Title="methods" Url="html/c902e370-83a2-0f16-81d1-ac781fb215fd.htm" />
+    <HelpKINode Title="properties" Url="html/69825e10-db21-05fd-1788-248692935d64.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dvd.Duree property" Url="html/639c5a12-5ffe-59a8-0476-27a864afff86.htm" />
+  <HelpKINode Title="Dvd.Dvd constructor" Url="html/ba10d67c-dd8d-59b6-e3fc-ae58f2977896.htm" />
+  <HelpKINode Title="Dvd.Realisateur property" Url="html/6c670339-f355-4b99-0750-92ce966b3753.htm" />
+  <HelpKINode Title="Dvd.Synopsis property" Url="html/21e12ab7-8f41-10a7-26db-669ed1c3d14e.htm" />
+  <HelpKINode Title="Empruntable property" Url="html/5f84c307-6489-4b1b-3e5d-84a268a079d6.htm" />
+  <HelpKINode Title="Etapes property" Url="html/58412809-82c2-a7ae-351e-dfc1775a6310.htm" />
+  <HelpKINode Title="Etat class">
+    <HelpKINode Title="Etat Class" Url="html/57d67426-cfa3-4b7a-b851-90d052cf71a3.htm" />
+    <HelpKINode Title="constructor" Url="html/2a704268-5351-502a-2d76-9cb5cbd64ea6.htm" />
+    <HelpKINode Title="methods" Url="html/b15ab09f-6a65-9d94-6f51-9b672a46ddb7.htm" />
+    <HelpKINode Title="properties" Url="html/dd2b5583-df86-59c6-8740-e057125ece6e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Etat.Etat constructor" Url="html/2a704268-5351-502a-2d76-9cb5cbd64ea6.htm" />
+  <HelpKINode Title="Etat.Id property" Url="html/515c59e6-8cc8-30e9-2103-506729c72a92.htm" />
+  <HelpKINode Title="Etat.Libelle property" Url="html/5f55e61a-9a78-bbde-bab4-ecf616890498.htm" />
+  <HelpKINode Title="etatsuivi property" Url="html/90898217-c490-9af1-8d8d-e3a4df7ab032.htm" />
+  <HelpKINode Title="etatsuiviColumn property" Url="html/de245eb4-30aa-1fe5-0fb7-a9e17bd80600.htm" />
+  <HelpKINode Title="Exemplaire class">
+    <HelpKINode Title="Exemplaire Class" Url="html/064216e6-c47a-7327-1dc8-8113c6349184.htm" />
+    <HelpKINode Title="constructor" Url="html/18dae9e0-43ef-46d8-0040-f660ec3505ad.htm" />
+    <HelpKINode Title="methods" Url="html/de8513e6-abcb-0c37-9b19-61e9b848b983.htm" />
+    <HelpKINode Title="properties" Url="html/336483b2-a723-3a21-3a79-6ca635728bb5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Exemplaire.DateAchat property" Url="html/99f400c8-ec32-8e93-4bff-4bd7f58542e0.htm" />
+  <HelpKINode Title="Exemplaire.Exemplaire constructor" Url="html/18dae9e0-43ef-46d8-0040-f660ec3505ad.htm" />
+  <HelpKINode Title="Exemplaire.IdDocument property" Url="html/4a81e5b2-77f7-d4a9-8002-8eae9b29b95f.htm" />
+  <HelpKINode Title="Exemplaire.IdEtat property" Url="html/2fb6f534-d18b-7061-3c0b-8d204915779b.htm" />
+  <HelpKINode Title="Exemplaire.Numero property" Url="html/a35137ee-2fdf-2010-63e5-17a0701a6544.htm" />
+  <HelpKINode Title="Exemplaire.Photo property" Url="html/476d0817-0875-aef0-b0af-33c29660a159.htm" />
+  <HelpKINode Title="Field method" Url="html/f985795d-b52c-07be-5a3f-f42bda90fe73.htm" />
+  <HelpKINode Title="Fill method" Url="html/110bdae8-b0c4-ad7a-1c51-a8e1bef7cced.htm" />
+  <HelpKINode Title="FinAbonnement class">
+    <HelpKINode Title="FinAbonnement Class" Url="html/8340f041-c12a-f843-2a8c-70254cf4cb28.htm" />
+    <HelpKINode Title="constructor" Url="html/7984baae-bf30-b3cd-e4bb-f417204dc2a4.htm" />
+    <HelpKINode Title="methods" Url="html/599c698d-1d82-3df6-effe-cbbff256c8f7.htm" />
+    <HelpKINode Title="properties" Url="html/3a8b4215-bd38-03ed-b703-161823a3a0ea.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FinAbonnement.DateFinAbonnement property" Url="html/bee48a8f-78e0-5d11-f032-57fe45ae684a.htm" />
+  <HelpKINode Title="FinAbonnement.FinAbonnement constructor" Url="html/7984baae-bf30-b3cd-e4bb-f417204dc2a4.htm" />
+  <HelpKINode Title="FinAbonnement.IdRevue property" Url="html/d9b58274-5a4d-90ef-0f4c-deaee77568de.htm" />
+  <HelpKINode Title="FinAbonnement.TitreRevue property" Url="html/6ed7c593-8ba2-1b7a-d706-706c004c9bde.htm" />
+  <HelpKINode Title="FindByid method" Url="html/b1e27663-41e7-7d5a-52dc-d94e9e3921ab.htm" />
+  <HelpKINode Title="FormAuthentification class">
+    <HelpKINode Title="FormAuthentification Class" Url="html/ce766d5a-061a-19ea-158c-fbed3675c596.htm" />
+    <HelpKINode Title="constructor" Url="html/3e4bf671-65ef-efd3-0840-06822c5fe68a.htm" />
+    <HelpKINode Title="events" Url="html/58443dd8-85e2-2274-6f56-dd664b6180f5.htm" />
+    <HelpKINode Title="methods" Url="html/59934438-5992-e16b-7ddf-49afed95a256.htm" />
+    <HelpKINode Title="properties" Url="html/3a129ecc-a190-926b-914d-34c7295cefe8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="formAuthentification field" Url="html/5a43fa0d-9efd-d587-e3b0-e8660303bb58.htm" />
+  <HelpKINode Title="FormAuthentification.AuthentificationOk property" Url="html/4b116a59-7126-3e96-1aa7-5c43ec3fd98e.htm" />
+  <HelpKINode Title="FormAuthentification.Dispose method" Url="html/34619234-be7a-9c21-43a1-ab9e8c7be9c1.htm" />
+  <HelpKINode Title="FormAuthentification.FormAuthentification constructor" Url="html/3e4bf671-65ef-efd3-0840-06822c5fe68a.htm" />
+  <HelpKINode Title="FrmAlerteAbonnements class">
+    <HelpKINode Title="FrmAlerteAbonnements Class" Url="html/fec86bdd-6eb8-fee2-f4ee-afd90f71c969.htm" />
+    <HelpKINode Title="constructor" Url="html/5d8c051c-1430-6163-d2d2-33f1220aed9c.htm" />
+    <HelpKINode Title="events" Url="html/d8a9fbc4-4190-3406-2633-d977bd780363.htm" />
+    <HelpKINode Title="methods" Url="html/b33c35ae-fa9a-c069-ce2e-49b61cb46808.htm" />
+    <HelpKINode Title="properties" Url="html/db0750e9-dd20-9238-135e-842a13fd014f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FrmAlerteAbonnements.Dispose method" Url="html/4897456e-81fa-565f-144c-05dbcc6aeb57.htm" />
+  <HelpKINode Title="FrmAlerteAbonnements.FrmAlerteAbonnements constructor" Url="html/5d8c051c-1430-6163-d2d2-33f1220aed9c.htm" />
+  <HelpKINode Title="FrmMediatek class">
+    <HelpKINode Title="FrmMediatek Class" Url="html/182a778b-cc51-04ff-5952-8b45780a87b2.htm" />
+    <HelpKINode Title="events" Url="html/b5406d65-822b-072d-bebc-f7276e2fd7b6.htm" />
+    <HelpKINode Title="methods" Url="html/23ab00d7-ec6d-b50c-7bdf-866b2b561101.htm" />
+    <HelpKINode Title="properties" Url="html/5feb0982-1e38-33f5-e17f-41977d91ab86.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FrmMediatek.Dispose method" Url="html/dc2e6cc8-12c2-e27a-0d24-4d9ae1972eba.htm" />
+  <HelpKINode Title="FrmMediatek.RemplirComboCategorie method" Url="html/d4f88904-c013-2453-2e0d-204a9689acc1.htm" />
+  <HelpKINode Title="FrmMediatek.RemplirListeCommandeDvds method" Url="html/84602c4a-c26c-fe91-4beb-5f31252f0bc2.htm" />
+  <HelpKINode Title="FrmMediatek.RemplirListeCommandeLivres method" Url="html/ddb210b3-3cee-f498-3072-734f7eb6eac9.htm" />
+  <HelpKINode Title="Genre class">
+    <HelpKINode Title="Genre Class" Url="html/a6ae6b33-8747-7bc7-ca5f-05a1a4e97c7f.htm" />
+    <HelpKINode Title="constructor" Url="html/b16a6672-6124-7e10-1edc-d139a921af61.htm" />
+    <HelpKINode Title="methods" Url="html/75cd8ee4-6989-a5e5-34e8-45f61e1cb2fd.htm" />
+    <HelpKINode Title="properties" Url="html/c11a4af9-cd9a-a942-c997-658fbe9f3e72.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Genre property" Url="html/3953185f-4bea-0189-ef13-e105f21d6c18.htm" />
+  <HelpKINode Title="Genre.Genre constructor" Url="html/b16a6672-6124-7e10-1edc-d139a921af61.htm" />
+  <HelpKINode Title="GetAllDvd method">
+    <HelpKINode Title="Controle.GetAllDvd Method " Url="html/3f7f6782-8be7-bb29-bcf3-1fcba15cb729.htm" />
+    <HelpKINode Title="Dao.GetAllDvd Method " Url="html/74023196-6fb6-b4fb-e00f-1bcbdce0a132.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllGenres method">
+    <HelpKINode Title="Controle.GetAllGenres Method " Url="html/37edab45-99ba-b8ae-1cf0-555bd543434f.htm" />
+    <HelpKINode Title="Dao.GetAllGenres Method " Url="html/09091cf7-2b69-cd4c-6fac-d5dce508fc26.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllLivres method">
+    <HelpKINode Title="Controle.GetAllLivres Method " Url="html/51e01a64-8ac2-42f2-ce1a-f5b541c66311.htm" />
+    <HelpKINode Title="Dao.GetAllLivres Method " Url="html/4b2090e1-bfb8-4414-1bf6-17aa6e69c9cb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllPublics method">
+    <HelpKINode Title="Controle.GetAllPublics Method " Url="html/f3825671-69ac-be9c-f213-9170281d9caf.htm" />
+    <HelpKINode Title="Dao.GetAllPublics Method " Url="html/8e432a87-015b-918c-c076-759f85f49e03.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllRayons method">
+    <HelpKINode Title="Controle.GetAllRayons Method " Url="html/1d85a4d9-a8c5-61cc-9fde-9559433cd77c.htm" />
+    <HelpKINode Title="Dao.GetAllRayons Method " Url="html/fec4facc-7acc-9f60-a84f-f0191adaf50e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllRevues method">
+    <HelpKINode Title="Controle.GetAllRevues Method " Url="html/95869873-dfc7-beca-6d47-aa90493da211.htm" />
+    <HelpKINode Title="Dao.GetAllRevues Method " Url="html/1b0f9945-c777-254d-05be-f5d20513c66e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetData method" Url="html/7218e53a-fbcd-8ba2-657a-962793c10f5e.htm" />
+  <HelpKINode Title="GetExemplairesRevue method">
+    <HelpKINode Title="Controle.GetExemplairesRevue Method " Url="html/a6679cb4-158f-12c6-b83c-1f0d31023ccd.htm" />
+    <HelpKINode Title="Dao.GetExemplairesRevue Method " Url="html/338bcd33-f648-5523-c36f-d9ddb9674dc5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetFinAbonnement method">
+    <HelpKINode Title="Controle.GetFinAbonnement Method " Url="html/cf8d5099-ecb9-83ba-b87f-97800a32f4eb.htm" />
+    <HelpKINode Title="Dao.GetFinAbonnement Method " Url="html/f08c4def-5c02-1c0b-5b00-aa92a184df88.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetInstance method" Url="html/e84ee0ce-45ba-e9e2-f1d5-6714ed4ca2a9.htm" />
+  <HelpKINode Title="GetLesAbonnement method" Url="html/114523ca-a8d1-76e8-f4eb-e351e3667fdc.htm" />
+  <HelpKINode Title="GetLesCommandeDocument method" Url="html/9d087046-1bfb-234c-24cd-69650395cba9.htm" />
+  <HelpKINode Title="GetRowType method" Url="html/6ba00401-206d-b335-f970-c388cc6a0dd0.htm" />
+  <HelpKINode Title="GetSchemaSerializable method" Url="html/240571f9-a000-7b0d-7782-0216426ef13a.htm" />
+  <HelpKINode Title="GetTypedDataSetSchema method" Url="html/2f25147b-0818-5029-4b27-2ab0879e9f92.htm" />
+  <HelpKINode Title="GetTypedTableSchema method" Url="html/2e49f43e-c8d3-f60a-7651-0defcded758c.htm" />
+  <HelpKINode Title="Id property">
+    <HelpKINode Title="Categorie.Id Property " Url="html/76e267fb-eb79-2b2c-40b7-bce47611b2b7.htm" />
+    <HelpKINode Title="Commande.Id Property " Url="html/c38021c1-5983-0b9f-3d95-e16b48a9b517.htm" />
+    <HelpKINode Title="CommandeDocument.Id Property " Url="html/6f8826bf-7fea-2e7b-82bc-dffd15cb5f93.htm" />
+    <HelpKINode Title="Etat.Id Property " Url="html/515c59e6-8cc8-30e9-2103-506729c72a92.htm" />
+    <HelpKINode Title="ProfilUtilisateur.Id Property " Url="html/fe679af5-d499-36bf-02c7-4fe5101e23cc.htm" />
+    <HelpKINode Title="AbonnementRevue.Id Property " Url="html/f6de752c-38c3-ff6f-4621-02cb0ee61312.htm" />
+    <HelpKINode Title="Document.Id Property " Url="html/e604ea8f-ddca-a52b-0ae4-3948de17984a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="id property" Url="html/87772cb2-7c5a-49a5-4e5a-e0ba13eb28cf.htm" />
+  <HelpKINode Title="idColumn property" Url="html/4df18e78-f3f9-6fb0-637c-3c3048d2d229.htm" />
+  <HelpKINode Title="IdDocument property" Url="html/4a81e5b2-77f7-d4a9-8002-8eae9b29b95f.htm" />
+  <HelpKINode Title="IdEtat property" Url="html/2fb6f534-d18b-7061-3c0b-8d204915779b.htm" />
+  <HelpKINode Title="IdGenre property" Url="html/065293c4-7af7-ad58-be69-b17066f28c07.htm" />
+  <HelpKINode Title="idLivreDvd property" Url="html/12ba6c68-f80b-1cdd-bbaf-adca668e5eb5.htm" />
+  <HelpKINode Title="IdLivreDvd property" Url="html/63704679-9fa0-037c-f755-1e4b1193cbdf.htm" />
+  <HelpKINode Title="idLivreDvdColumn property" Url="html/03409547-9b40-20d8-839b-b8d6c907fb59.htm" />
+  <HelpKINode Title="IdPublic property" Url="html/6be57152-39f6-9428-2c44-c18a15dbb044.htm" />
+  <HelpKINode Title="IdRayon property" Url="html/18a47ba4-a41a-c5ec-7d80-5e2c9266d41c.htm" />
+  <HelpKINode Title="IdRevue property">
+    <HelpKINode Title="AbonnementRevue.IdRevue Property " Url="html/8a15f783-b34c-74bb-88fb-7d420f933431.htm" />
+    <HelpKINode Title="FinAbonnement.IdRevue Property " Url="html/d9b58274-5a4d-90ef-0f4c-deaee77568de.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Image property" Url="html/71602590-9921-8fe8-26ed-ff6d4a7b627a.htm" />
+  <HelpKINode Title="InitializeDerivedDataSet method" Url="html/dcdac09a-940d-1769-e9e0-4376aab3e063.htm" />
+  <HelpKINode Title="Insert method" Url="html/6d0e205a-f9ae-a9a9-df3d-6817c0629d00.htm" />
+  <HelpKINode Title="InsertUpdateDelete enumeration member" Url="html/9901d44c-0fc2-3881-bbbb-0552a1a05a41.htm" />
+  <HelpKINode Title="Isbn property" Url="html/cdaf99ab-e8b8-c4a2-bf56-febe92d66401.htm" />
+  <HelpKINode Title="IsnbExemplaireNull method" Url="html/0a4d22ff-a2f3-f38d-d489-10b9fdfd4cc4.htm" />
+  <HelpKINode Title="Item property" Url="html/ddda489d-2126-3faa-8600-f2d3402012f6.htm" />
+  <HelpKINode Title="lesprofilUtilisateurs property" Url="html/8f59c861-7b9f-6f39-3fae-4da8bea6516f.htm" />
+  <HelpKINode Title="Libelle property">
+    <HelpKINode Title="Categorie.Libelle Property " Url="html/99807cbb-de95-279e-fb32-ad34c4252c3c.htm" />
+    <HelpKINode Title="Etat.Libelle Property " Url="html/5f55e61a-9a78-bbde-bab4-ecf616890498.htm" />
+    <HelpKINode Title="ProfilUtilisateur.Libelle Property " Url="html/7ad80a4a-4dab-f119-db92-4fc8347e7bb1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Livre class">
+    <HelpKINode Title="Livre Class" Url="html/f4ab2049-6672-91bf-3ce3-4006dee52be2.htm" />
+    <HelpKINode Title="constructor" Url="html/b14a71c2-3e64-d13b-893f-5f456a5e1e57.htm" />
+    <HelpKINode Title="methods" Url="html/07fb9d05-83a9-8cbd-4e5c-61d2ef27d104.htm" />
+    <HelpKINode Title="properties" Url="html/d83ea962-bfc3-94c1-c3b9-d76dc746a560.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Livre.Auteur property" Url="html/7f279122-f451-88b1-bfda-12de3ce12121.htm" />
+  <HelpKINode Title="Livre.Collection property" Url="html/a961fd45-3cea-04b2-ad90-a69fc8b5bc09.htm" />
+  <HelpKINode Title="Livre.Isbn property" Url="html/cdaf99ab-e8b8-c4a2-bf56-febe92d66401.htm" />
+  <HelpKINode Title="Livre.Livre constructor" Url="html/b14a71c2-3e64-d13b-893f-5f456a5e1e57.htm" />
+  <HelpKINode Title="LivreDvd class">
+    <HelpKINode Title="LivreDvd Class" Url="html/7040b657-d6ff-bdf5-3324-09e64e36ad81.htm" />
+    <HelpKINode Title="constructor" Url="html/99678016-e8b7-5ad3-5508-8a0f4c4e7863.htm" />
+    <HelpKINode Title="methods" Url="html/0c574c76-ac2e-3c04-962f-45a96c5996a5.htm" />
+    <HelpKINode Title="properties" Url="html/3b195cc5-f9ae-64af-35ea-77e2871e7551.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LivreDvd.LivreDvd constructor" Url="html/99678016-e8b7-5ad3-5508-8a0f4c4e7863.htm" />
+  <HelpKINode Title="MatchTableAdapterConnection method" Url="html/c8e8dd55-1d8c-ae05-5e4f-77ba262b45b9.htm" />
+  <HelpKINode Title="Mediatek86 namespace" Url="html/8e254d6d-42d6-2695-de53-0d28e0f96b99.htm" />
+  <HelpKINode Title="Mediatek86.bdd namespace" Url="html/e193ddc4-e820-c1d6-b16e-2371c99b9149.htm" />
+  <HelpKINode Title="Mediatek86.bdd.BddMySql class" Url="html/9fffc05c-9104-fd54-2d3b-550525a779fb.htm" />
+  <HelpKINode Title="Mediatek86.controleur namespace" Url="html/9b0525ba-0553-02b0-d5ca-cb14f687f592.htm" />
+  <HelpKINode Title="Mediatek86.controleur.Controle class" Url="html/c8a8a4ea-a5d3-f296-8e13-07f59c341f68.htm" />
+  <HelpKINode Title="Mediatek86.dal namespace" Url="html/db4dfb11-7c41-a4dc-b6fb-f9efc2501479.htm" />
+  <HelpKINode Title="Mediatek86.dal.AbonnementRevue class" Url="html/b16cdc89-6825-496d-3a61-31a897f0f9c6.htm" />
+  <HelpKINode Title="Mediatek86.dal.CommandeDocument class" Url="html/dff1083f-59b5-ccd9-1a42-575c4eff333e.htm" />
+  <HelpKINode Title="Mediatek86.dal.ProfilUtilisateur class" Url="html/c1ffee8f-8c94-909f-4802-197021f80b75.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSet class" Url="html/bc0a31bb-6733-0721-d082-a8370b048a00.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSet.commandedocumentDataTable class" Url="html/199a0dcf-18e8-7428-e767-3c0c9db6b532.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSet.commandedocumentRow class" Url="html/2cac9598-6b31-5279-2a42-ff80e87ca796.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSet.commandedocumentRowChangeEvent class" Url="html/54917ec2-a0a4-7b69-b081-d9646f63dbfd.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSet.commandedocumentRowChangeEventHandler delegate" Url="html/f32e372b-4468-e6f7-3409-368fb1b579e3.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSetTableAdapters namespace" Url="html/aa613dab-df12-c5c8-c6c6-0fc755d3c7cf.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSetTableAdapters.commandedocumentTableAdapter class" Url="html/3fdd6c1c-1e49-4fef-9fb3-76bfd04273e5.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSetTableAdapters.TableAdapterManager class" Url="html/66c1c426-36f7-7840-37ad-5b4f3bbbe070.htm" />
+  <HelpKINode Title="Mediatek86.mediatek86DataSetTableAdapters.TableAdapterManager.UpdateOrderOption enumeration" Url="html/9901d44c-0fc2-3881-bbbb-0552a1a05a41.htm" />
+  <HelpKINode Title="Mediatek86.metier namespace" Url="html/16b924a1-b9b7-5884-d6ea-18343dbfaaac.htm" />
+  <HelpKINode Title="Mediatek86.metier.Categorie class" Url="html/29619a1b-a306-4a4c-3d1a-6d930441d494.htm" />
+  <HelpKINode Title="Mediatek86.metier.Commande class" Url="html/f1aab7d1-1e97-f81a-da15-ef9db568532f.htm" />
+  <HelpKINode Title="Mediatek86.metier.Document class" Url="html/28ca3727-a757-52a0-b622-abd3d8015bc1.htm" />
+  <HelpKINode Title="Mediatek86.metier.Dvd class" Url="html/af27768b-6e54-9cf0-e430-0c8af84f69c9.htm" />
+  <HelpKINode Title="Mediatek86.metier.Etat class" Url="html/57d67426-cfa3-4b7a-b851-90d052cf71a3.htm" />
+  <HelpKINode Title="Mediatek86.metier.Exemplaire class" Url="html/064216e6-c47a-7327-1dc8-8113c6349184.htm" />
+  <HelpKINode Title="Mediatek86.metier.FinAbonnement class" Url="html/8340f041-c12a-f843-2a8c-70254cf4cb28.htm" />
+  <HelpKINode Title="Mediatek86.metier.Genre class" Url="html/a6ae6b33-8747-7bc7-ca5f-05a1a4e97c7f.htm" />
+  <HelpKINode Title="Mediatek86.metier.Livre class" Url="html/f4ab2049-6672-91bf-3ce3-4006dee52be2.htm" />
+  <HelpKINode Title="Mediatek86.metier.LivreDvd class" Url="html/7040b657-d6ff-bdf5-3324-09e64e36ad81.htm" />
+  <HelpKINode Title="Mediatek86.metier.Public class" Url="html/66f99932-b823-7785-2f60-994ecc4d26f2.htm" />
+  <HelpKINode Title="Mediatek86.metier.Rayon class" Url="html/fec66fa5-ddd0-aa20-4f10-04297030d18b.htm" />
+  <HelpKINode Title="Mediatek86.metier.Revue class" Url="html/7bc01d6a-f2f3-5039-4eb9-230e8b051f1d.htm" />
+  <HelpKINode Title="Mediatek86.modele namespace" Url="html/8a4ebd68-6a2a-179a-5f15-d1bb4059bf0c.htm" />
+  <HelpKINode Title="Mediatek86.modele.Dao class" Url="html/fede85f2-6562-c89b-9a54-75203b747c23.htm" />
+  <HelpKINode Title="Mediatek86.vue namespace" Url="html/906cda2f-40bb-946f-f718-3a3e8e498d14.htm" />
+  <HelpKINode Title="Mediatek86.vue.FormAuthentification class" Url="html/ce766d5a-061a-19ea-158c-fbed3675c596.htm" />
+  <HelpKINode Title="Mediatek86.vue.FrmAlerteAbonnements class" Url="html/fec86bdd-6eb8-fee2-f4ee-afd90f71c969.htm" />
+  <HelpKINode Title="Mediatek86.vue.FrmMediatek class" Url="html/182a778b-cc51-04ff-5952-8b45780a87b2.htm" />
+  <HelpKINode Title="mediatek86DataSet class">
+    <HelpKINode Title="mediatek86DataSet Class" Url="html/bc0a31bb-6733-0721-d082-a8370b048a00.htm" />
+    <HelpKINode Title="constructor" Url="html/1d5600b4-6129-01ed-7503-c7eb621c122d.htm" />
+    <HelpKINode Title="events" Url="html/7d0b2274-6115-f70c-4a17-3f80965c272f.htm" />
+    <HelpKINode Title="methods" Url="html/eff2a292-0333-e344-a03d-a58eb8e30a1c.htm" />
+    <HelpKINode Title="properties" Url="html/c8dbd45b-8c40-3fe7-980f-1ee34a724994.htm" />
+  </HelpKINode>
+  <HelpKINode Title="mediatek86DataSet.Clone method" Url="html/218e4d2d-4196-2c1c-3c31-45fe5262bbbe.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocument property" Url="html/ccfdae92-b857-dd2f-011c-b9b2618d7690.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable class">
+    <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable Class" Url="html/199a0dcf-18e8-7428-e767-3c0c9db6b532.htm" />
+    <HelpKINode Title="constructor" Url="html/8b09aa70-7636-f860-e8f6-f0be3abde167.htm" />
+  </HelpKINode>
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.AddcommandedocumentRow method" Url="html/704ee956-31b0-a16c-32c6-a4b07472b848.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.Clone method" Url="html/65058e7a-7c9f-5b70-4802-975b70985fca.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.commandedocumentDataTable constructor" Url="html/8b09aa70-7636-f860-e8f6-f0be3abde167.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.commandedocumentRowChanged event" Url="html/6274b8bd-6bd4-288f-5130-9641a487942a.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.commandedocumentRowChanging event" Url="html/48b06402-71c7-d7ee-4c3a-bfedb0372d70.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.commandedocumentRowDeleted event" Url="html/cdb2319b-33d8-37f0-3b7c-6e24c86f0c43.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.commandedocumentRowDeleting event" Url="html/c84322f3-664c-80b5-1470-3bb41614833e.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.Count property" Url="html/f3060882-8cc5-998d-ba83-a69a5276299d.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.CreateInstance method" Url="html/ba3f0ee8-5cf5-24fd-120e-e9758e8e0bff.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.etatsuiviColumn property" Url="html/de245eb4-30aa-1fe5-0fb7-a9e17bd80600.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.FindByid method" Url="html/b1e27663-41e7-7d5a-52dc-d94e9e3921ab.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.GetRowType method" Url="html/6ba00401-206d-b335-f970-c388cc6a0dd0.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.GetTypedTableSchema method" Url="html/2e49f43e-c8d3-f60a-7651-0defcded758c.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.idColumn property" Url="html/4df18e78-f3f9-6fb0-637c-3c3048d2d229.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.idLivreDvdColumn property" Url="html/03409547-9b40-20d8-839b-b8d6c907fb59.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.Item property" Url="html/ddda489d-2126-3faa-8600-f2d3402012f6.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.nbExemplaireColumn property" Url="html/86d14d23-1e44-dd7b-4099-28371c4f278b.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.NewcommandedocumentRow method" Url="html/8d679e03-35f5-f1f3-f2ca-7cdaa8c6953e.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.NewRowFromBuilder method" Url="html/449ecf04-a95b-b6bb-10bc-65910368ee07.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.OnRowChanged method" Url="html/bbb692b4-6fb3-181e-384f-e98fc03a7dc9.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.OnRowChanging method" Url="html/946eb568-5372-0e30-4c1b-57ba4f2d3bda.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.OnRowDeleted method" Url="html/5d72b665-d8f5-7777-f8c4-198341dd851e.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.OnRowDeleting method" Url="html/3284500d-08cb-7fc3-23df-a689b36d68e2.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentDataTable.RemovecommandedocumentRow method" Url="html/795a52ab-568c-f2b4-4542-92250940ea96.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRow class" Url="html/2cac9598-6b31-5279-2a42-ff80e87ca796.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRow.etatsuivi property" Url="html/90898217-c490-9af1-8d8d-e3a4df7ab032.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRow.id property" Url="html/87772cb2-7c5a-49a5-4e5a-e0ba13eb28cf.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRow.idLivreDvd property" Url="html/12ba6c68-f80b-1cdd-bbaf-adca668e5eb5.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRow.IsnbExemplaireNull method" Url="html/0a4d22ff-a2f3-f38d-d489-10b9fdfd4cc4.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRow.nbExemplaire property" Url="html/20170b20-8284-6398-f9f2-aae3b067f966.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRow.SetnbExemplaireNull method" Url="html/cc8e59c2-2ea2-5c9d-5849-9319392b0c2b.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRowChangeEvent class">
+    <HelpKINode Title="mediatek86DataSet.commandedocumentRowChangeEvent Class" Url="html/54917ec2-a0a4-7b69-b081-d9646f63dbfd.htm" />
+    <HelpKINode Title="constructor" Url="html/d22948b7-8a9d-0181-63c5-69e1e9649a0b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRowChangeEvent.Action property" Url="html/adaec72e-8447-65eb-e5ee-7c9a6bea04b5.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRowChangeEvent.commandedocumentRowChangeEvent constructor" Url="html/d22948b7-8a9d-0181-63c5-69e1e9649a0b.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRowChangeEvent.Row property" Url="html/898c61c9-2beb-c31a-2940-1a976605eeb3.htm" />
+  <HelpKINode Title="mediatek86DataSet.commandedocumentRowChangeEventHandler delegate" Url="html/f32e372b-4468-e6f7-3409-368fb1b579e3.htm" />
+  <HelpKINode Title="mediatek86DataSet.GetSchemaSerializable method" Url="html/240571f9-a000-7b0d-7782-0216426ef13a.htm" />
+  <HelpKINode Title="mediatek86DataSet.GetTypedDataSetSchema method" Url="html/2f25147b-0818-5029-4b27-2ab0879e9f92.htm" />
+  <HelpKINode Title="mediatek86DataSet.InitializeDerivedDataSet method" Url="html/dcdac09a-940d-1769-e9e0-4376aab3e063.htm" />
+  <HelpKINode Title="mediatek86DataSet.mediatek86DataSet constructor" Url="html/1d5600b4-6129-01ed-7503-c7eb621c122d.htm" />
+  <HelpKINode Title="mediatek86DataSet.ReadXmlSerializable method" Url="html/15879937-24ef-b629-ee7f-01e67bbcac4f.htm" />
+  <HelpKINode Title="mediatek86DataSet.Relations property" Url="html/d0616d10-8e7f-d4a8-3bab-837a9c4b6e85.htm" />
+  <HelpKINode Title="mediatek86DataSet.SchemaSerializationMode property" Url="html/0f4677b9-74c8-38a6-c794-316df65c7476.htm" />
+  <HelpKINode Title="mediatek86DataSet.ShouldSerializeRelations method" Url="html/f6d57d32-78ef-4fd5-cfff-aa3cf529f972.htm" />
+  <HelpKINode Title="mediatek86DataSet.ShouldSerializeTables method" Url="html/5d709189-aa85-d218-9ea1-d7e6a77ffcf8.htm" />
+  <HelpKINode Title="mediatek86DataSet.Tables property" Url="html/87b8572b-46fc-697d-4f4a-6d63620e0cef.htm" />
+  <HelpKINode Title="Montant property">
+    <HelpKINode Title="AbonnementRevue.Montant Property " Url="html/e9435b94-d215-096c-4840-9431f66054e3.htm" />
+    <HelpKINode Title="Commande.Montant Property " Url="html/653f555e-dac3-dad5-94e9-0c4fc3d61868.htm" />
+    <HelpKINode Title="CommandeDocument.Montant Property " Url="html/2251ff49-14f5-cdd9-c642-4880d2f94448.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NbExemplaire property" Url="html/ce9a0d56-a942-3225-3933-8562fb3d2ba1.htm" />
+  <HelpKINode Title="nbExemplaire property" Url="html/20170b20-8284-6398-f9f2-aae3b067f966.htm" />
+  <HelpKINode Title="nbExemplaireColumn property" Url="html/86d14d23-1e44-dd7b-4099-28371c4f278b.htm" />
+  <HelpKINode Title="NewcommandedocumentRow method" Url="html/8d679e03-35f5-f1f3-f2ca-7cdaa8c6953e.htm" />
+  <HelpKINode Title="NewRowFromBuilder method" Url="html/449ecf04-a95b-b6bb-10bc-65910368ee07.htm" />
+  <HelpKINode Title="Numero property" Url="html/a35137ee-2fdf-2010-63e5-17a0701a6544.htm" />
+  <HelpKINode Title="OnRowChanged method" Url="html/bbb692b4-6fb3-181e-384f-e98fc03a7dc9.htm" />
+  <HelpKINode Title="OnRowChanging method" Url="html/946eb568-5372-0e30-4c1b-57ba4f2d3bda.htm" />
+  <HelpKINode Title="OnRowDeleted method" Url="html/5d72b665-d8f5-7777-f8c4-198341dd851e.htm" />
+  <HelpKINode Title="OnRowDeleting method" Url="html/3284500d-08cb-7fc3-23df-a689b36d68e2.htm" />
+  <HelpKINode Title="ParutionDansAbonnement method" Url="html/5152b840-2537-d3ee-2733-42514b9419e8.htm" />
+  <HelpKINode Title="Periodicite property" Url="html/cb9fc2be-ca52-3ded-d772-14291faa1d6b.htm" />
+  <HelpKINode Title="Photo property" Url="html/476d0817-0875-aef0-b0af-33c29660a159.htm" />
+  <HelpKINode Title="ProfilUtilisateur class">
+    <HelpKINode Title="ProfilUtilisateur Class" Url="html/c1ffee8f-8c94-909f-4802-197021f80b75.htm" />
+    <HelpKINode Title="constructor" Url="html/bb77bf72-32d3-cb30-8b61-a68c18d2fac0.htm" />
+    <HelpKINode Title="methods" Url="html/2c6e4dbd-3bcf-1d2c-71d4-3be2593d85bb.htm" />
+    <HelpKINode Title="properties" Url="html/495b64b7-f30a-3c00-4fb1-df3f79fa692b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ProfilUtilisateur.Id property" Url="html/fe679af5-d499-36bf-02c7-4fe5101e23cc.htm" />
+  <HelpKINode Title="ProfilUtilisateur.Libelle property" Url="html/7ad80a4a-4dab-f119-db92-4fc8347e7bb1.htm" />
+  <HelpKINode Title="ProfilUtilisateur.ProfilUtilisateur constructor" Url="html/bb77bf72-32d3-cb30-8b61-a68c18d2fac0.htm" />
+  <HelpKINode Title="Public class">
+    <HelpKINode Title="Public Class" Url="html/66f99932-b823-7785-2f60-994ecc4d26f2.htm" />
+    <HelpKINode Title="constructor" Url="html/2b4e73d3-cb1f-0af7-5857-8ac72108254e.htm" />
+    <HelpKINode Title="methods" Url="html/d75e7e59-1924-c192-25be-fe4365f09756.htm" />
+    <HelpKINode Title="properties" Url="html/e2bf9e5a-a52d-a939-4a00-45502f3a2b31.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Public property" Url="html/d8fea443-9854-504f-cd83-2c07b5a3302c.htm" />
+  <HelpKINode Title="Public.Public constructor" Url="html/2b4e73d3-cb1f-0af7-5857-8ac72108254e.htm" />
+  <HelpKINode Title="Rayon class">
+    <HelpKINode Title="Rayon Class" Url="html/fec66fa5-ddd0-aa20-4f10-04297030d18b.htm" />
+    <HelpKINode Title="constructor" Url="html/9da95314-6b39-80fe-5819-c40737e7dea4.htm" />
+    <HelpKINode Title="methods" Url="html/d26e195c-5579-fc7d-f83c-cded40057dc8.htm" />
+    <HelpKINode Title="properties" Url="html/afdec619-3b8d-8c0c-bc6f-98eff6ad4988.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Rayon property" Url="html/8d9d4f7c-e180-e19b-5a96-07070ea027cb.htm" />
+  <HelpKINode Title="Rayon.Rayon constructor" Url="html/9da95314-6b39-80fe-5819-c40737e7dea4.htm" />
+  <HelpKINode Title="Read method" Url="html/17a15201-b7dc-cb2c-b3b8-6ef1afe65033.htm" />
+  <HelpKINode Title="ReadXmlSerializable method" Url="html/15879937-24ef-b629-ee7f-01e67bbcac4f.htm" />
+  <HelpKINode Title="Realisateur property" Url="html/6c670339-f355-4b99-0750-92ce966b3753.htm" />
+  <HelpKINode Title="Relations property" Url="html/d0616d10-8e7f-d4a8-3bab-837a9c4b6e85.htm" />
+  <HelpKINode Title="RemovecommandedocumentRow method" Url="html/795a52ab-568c-f2b4-4542-92250940ea96.htm" />
+  <HelpKINode Title="RemplirComboCategorie method" Url="html/d4f88904-c013-2453-2e0d-204a9689acc1.htm" />
+  <HelpKINode Title="RemplirListeCommandeDvds method" Url="html/84602c4a-c26c-fe91-4beb-5f31252f0bc2.htm" />
+  <HelpKINode Title="RemplirListeCommandeLivres method" Url="html/ddb210b3-3cee-f498-3072-734f7eb6eac9.htm" />
+  <HelpKINode Title="ReqSelect method" Url="html/a34a3755-c9e2-8567-965d-762124decd37.htm" />
+  <HelpKINode Title="ReqUpdate method" Url="html/a24a7fed-0628-fec2-ca1b-269f6addd226.htm" />
+  <HelpKINode Title="Revue class">
+    <HelpKINode Title="Revue Class" Url="html/7bc01d6a-f2f3-5039-4eb9-230e8b051f1d.htm" />
+    <HelpKINode Title="constructor" Url="html/c2048e74-9bed-f164-5243-26e4c1dd4870.htm" />
+    <HelpKINode Title="methods" Url="html/2d753431-c531-fe27-8c99-15f1aaa42325.htm" />
+    <HelpKINode Title="properties" Url="html/612b5418-d1af-f80c-4a7d-f6a89416b435.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Revue.DelaiMiseADispo property" Url="html/057d45af-d1db-7b81-0285-b30d88cf3a58.htm" />
+  <HelpKINode Title="Revue.Empruntable property" Url="html/5f84c307-6489-4b1b-3e5d-84a268a079d6.htm" />
+  <HelpKINode Title="Revue.Periodicite property" Url="html/cb9fc2be-ca52-3ded-d772-14291faa1d6b.htm" />
+  <HelpKINode Title="Revue.Revue constructor" Url="html/c2048e74-9bed-f164-5243-26e4c1dd4870.htm" />
+  <HelpKINode Title="Row property" Url="html/898c61c9-2beb-c31a-2940-1a976605eeb3.htm" />
+  <HelpKINode Title="SchemaSerializationMode property" Url="html/0f4677b9-74c8-38a6-c794-316df65c7476.htm" />
+  <HelpKINode Title="SetnbExemplaireNull method" Url="html/cc8e59c2-2ea2-5c9d-5849-9319392b0c2b.htm" />
+  <HelpKINode Title="ShouldSerializeRelations method" Url="html/f6d57d32-78ef-4fd5-cfff-aa3cf529f972.htm" />
+  <HelpKINode Title="ShouldSerializeTables method" Url="html/5d709189-aa85-d218-9ea1-d7e6a77ffcf8.htm" />
+  <HelpKINode Title="SortSelfReferenceRows method" Url="html/4f9e1bbe-88c7-8471-8ad6-a57bf5d4afd7.htm" />
+  <HelpKINode Title="SupprimerAbonnement method">
+    <HelpKINode Title="Controle.SupprimerAbonnement Method " Url="html/3ce4d699-fba1-84a8-7d0c-58304621733d.htm" />
+    <HelpKINode Title="Dao.SupprimerAbonnement Method " Url="html/4b2750c3-87e7-6ed7-68a9-89ca04f8d366.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Synopsis property" Url="html/21e12ab7-8f41-10a7-26db-669ed1c3d14e.htm" />
+  <HelpKINode Title="TableAdapterInstanceCount property" Url="html/1d528b68-695f-d157-ede0-103f5eb91ab1.htm" />
+  <HelpKINode Title="TableAdapterManager class">
+    <HelpKINode Title="TableAdapterManager Class" Url="html/66c1c426-36f7-7840-37ad-5b4f3bbbe070.htm" />
+    <HelpKINode Title="constructor" Url="html/25c9b770-ed14-6be0-b62a-86d9afa7653a.htm" />
+    <HelpKINode Title="events" Url="html/dc0e669f-1d0f-b3e8-01de-9293b68f318d.htm" />
+    <HelpKINode Title="methods" Url="html/4e6112f9-2ba0-bde0-7b3d-1beec639375a.htm" />
+    <HelpKINode Title="properties" Url="html/2e6b5b42-fbb7-ca61-cb2d-95aeb020f6b9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TableAdapterManager.BackupDataSetBeforeUpdate property" Url="html/cfefc351-e210-bc91-8711-db9fdd60f382.htm" />
+  <HelpKINode Title="TableAdapterManager.commandedocumentTableAdapter property" Url="html/7fd802d3-ba37-e056-402d-4c3723ae9b23.htm" />
+  <HelpKINode Title="TableAdapterManager.Connection property" Url="html/38d965f5-d190-d698-f90f-ea9f62838173.htm" />
+  <HelpKINode Title="TableAdapterManager.MatchTableAdapterConnection method" Url="html/c8e8dd55-1d8c-ae05-5e4f-77ba262b45b9.htm" />
+  <HelpKINode Title="TableAdapterManager.SortSelfReferenceRows method" Url="html/4f9e1bbe-88c7-8471-8ad6-a57bf5d4afd7.htm" />
+  <HelpKINode Title="TableAdapterManager.TableAdapterInstanceCount property" Url="html/1d528b68-695f-d157-ede0-103f5eb91ab1.htm" />
+  <HelpKINode Title="TableAdapterManager.TableAdapterManager constructor" Url="html/25c9b770-ed14-6be0-b62a-86d9afa7653a.htm" />
+  <HelpKINode Title="TableAdapterManager.UpdateAll method" Url="html/630df101-7d87-0004-97e3-98131a9feb75.htm" />
+  <HelpKINode Title="TableAdapterManager.UpdateOrder property" Url="html/d583fdf1-fdd5-d7a8-5160-341a17348a7d.htm" />
+  <HelpKINode Title="TableAdapterManager.UpdateOrderOption enumeration" Url="html/9901d44c-0fc2-3881-bbbb-0552a1a05a41.htm" />
+  <HelpKINode Title="Tables property" Url="html/87b8572b-46fc-697d-4f4a-6d63620e0cef.htm" />
+  <HelpKINode Title="Titre property" Url="html/43bf0b30-4462-df6b-4b06-7a223fee6580.htm" />
+  <HelpKINode Title="TitreRevue property" Url="html/6ed7c593-8ba2-1b7a-d706-706c004c9bde.htm" />
+  <HelpKINode Title="ToString method" Url="html/afd30383-9b17-f76e-45d7-c097e5a3a093.htm" />
+  <HelpKINode Title="Update method" Url="html/99a1a366-454b-ed3d-755a-3c668d896cfa.htm" />
+  <HelpKINode Title="UpdateAll method" Url="html/630df101-7d87-0004-97e3-98131a9feb75.htm" />
+  <HelpKINode Title="UpdateEtapes method" Url="html/891731b6-e8a7-b442-268f-ebbe3914bebf.htm" />
+  <HelpKINode Title="UpdateInsertDelete enumeration member" Url="html/9901d44c-0fc2-3881-bbbb-0552a1a05a41.htm" />
+  <HelpKINode Title="UpdateOrder property" Url="html/d583fdf1-fdd5-d7a8-5160-341a17348a7d.htm" />
+</HelpKI>

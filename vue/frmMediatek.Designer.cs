@@ -1,6 +1,9 @@
 ﻿
 namespace Mediatek86.vue
 {
+    /// <summary>
+    /// Classe gérant la forme de l'application
+    /// </summary>
     partial class FrmMediatek
     {
         /// <summary>

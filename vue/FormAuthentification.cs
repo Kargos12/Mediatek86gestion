@@ -24,6 +24,10 @@ namespace Mediatek86.vue
         /// </summary>
         private Controle controle;
 
+        /// <summary>
+        /// Lancement de la fenêtre d'authentification
+        /// </summary>
+        /// <param name="controle"></param>
         public FormAuthentification(Controle controle)
         {
             InitializeComponent();

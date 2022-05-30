@@ -6,18 +6,36 @@ using System.Threading.Tasks;
 
 namespace Mediatek86.dal
 {
+    /// <summary>
+    /// Classe gérant l'abonnement à une revue
+    /// </summary>
     public class AbonnementRevue
     {
         private string id;
-        private double montant;
-        private DateTime dateCommande;
+        private readonly double montant;
+        private readonly DateTime dateCommande;
         private DateTime dateFinAbonnement;
         private string idRevue;
 
+        /// <summary>
+        /// Id de l'abonnement à une revue
+        /// </summary>
         public string Id { get => id; set => id = value; }
+        /// <summary>
+        /// Montant de l'abonnement à une revue
+        /// </summary>
         public double Montant { get => montant; }
+        /// <summary>
+        /// Date de début d'un abonnement à une revue
+        /// </summary>
         public DateTime DateCommande { get => dateCommande; }
+        /// <summary>
+        /// Date de fin d'abonnement à une revue
+        /// </summary>
         public DateTime DateFinAbonnement { get => dateFinAbonnement; set => dateFinAbonnement = value; }
+        /// <summary>
+        /// Id de la revue concerné par l'abonnement
+        /// </summary>
         public string IdRevue { get => idRevue; set => idRevue = value; }
 
         /// <summary>

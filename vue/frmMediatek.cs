@@ -1403,7 +1403,7 @@ namespace Mediatek86.vue
         /// <summary>
         /// Affichage des informations du livre sélectionné
         /// </summary>
-        /// <param name="revue"></param>
+        /// <param name="livre"></param>
         private void AfficheInfosLivreCommandeLivres(Livre livre)
         {
             // informations sur le livre
@@ -1500,6 +1500,7 @@ namespace Mediatek86.vue
         }
         /// <summary>
         /// Clique sur le bouton pour mettre la commande de livre selectionnée au statut en cours
+        /// la commande ne peux être relancée que si elle est en cours
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1508,12 +1509,9 @@ namespace Mediatek86.vue
             if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
             {
                 CommandeDocument commandeDocument = (CommandeDocument)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
-                /// la commande ne peux être relancée que si elle est en cours
                 if (commandeDocument.Etapes == "en cours")
                 {
-                    /// envoi du statut "4" qui correspond à "en cours"
                     commandeDocument.Etapes = "4";
-                    /// envoi l'id de la commande selectionnée
                     commandeDocument.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
                     controle.UpdateEtapes(commandeDocument);
                     RemplirListeCommandeLivres();
@@ -1544,6 +1542,7 @@ namespace Mediatek86.vue
         /// Clique sur le bouton pour mettre la commande selectionnée au statut livrée
         /// Possible que si la commande est en cours ou relancée
         /// ajoute les exemplaires dans la table corresponsante
+        /// la commande peux être mise au statut livrée que si elle est en cours ou relancée
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1552,16 +1551,12 @@ namespace Mediatek86.vue
             if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
             {
                 CommandeDocument commandeDocument = (CommandeDocument)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
-                /// la commande peux être mise au statut livrée que si elle est en cours ou relancée
                 if (commandeDocument.Etapes == "en cours" || commandeDocument.Etapes == "relancée")
                 {
-                    /// envoi du statut "2" qui correspond à "en relancée"
                     commandeDocument.Etapes = "2";
-                    /// envoi l'id de la commande selectionnée
                     commandeDocument.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
                     controle.UpdateEtapes(commandeDocument);
 
-                    /// ajout des exemplaires dans la table correspondante
                     for (int k = 1; k <= commandeDocument.NbExemplaire; k++)
                     {
                         int numero = k;
@@ -1594,6 +1589,7 @@ namespace Mediatek86.vue
         }
         /// <summary>
         /// Clique sur le bouton pour mettre la commande selectionnée au statut réglée
+        /// la commande ne peux être notée réglée que si elle a été livrée
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1602,12 +1598,10 @@ namespace Mediatek86.vue
             if (dgvLivresListeCommandeLivres.SelectedRows.Count > 0)
             {
                 CommandeDocument commandeDocument = (CommandeDocument)bdgLivresListeCommandeLivres.List[bdgLivresListeCommandeLivres.Position];
-                /// la commande ne peux être notée réglée que si elle a été livrée
+
                 if (commandeDocument.Etapes == "livrée")
                 {
-                    /// envoi du statut "3" qui correspond à "en reglée"
                     commandeDocument.Etapes = "3";
-                    /// envoi l'id de la commande selectionnée
                     commandeDocument.Id = (string)(dgvLivresListeCommandeLivres.SelectedRows[0].Cells["id"].Value);
                     controle.UpdateEtapes(commandeDocument);
                     RemplirListeCommandeLivres();
@@ -1731,7 +1725,7 @@ namespace Mediatek86.vue
         /// <summary>
         /// Affichage des informations du dvd sélectionné
         /// </summary>
-        /// <param name="revue"></param>
+        /// <param name="dvd"></param>
         private void AfficheInfosCommandeDvds(Dvd dvd)
         {
             // informations sur le dvd
@@ -1825,6 +1819,7 @@ namespace Mediatek86.vue
         }
         /// <summary>
         /// Clique sur le bouton pour mettre la commande de dvd selectionnée au statut en cours
+        /// la commande ne peux être relancée que si elle est en cours
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1833,12 +1828,10 @@ namespace Mediatek86.vue
             if (dgvListeCommandeDvds.SelectedRows.Count > 0)
             {
                 CommandeDocument commandeDocument = (CommandeDocument)bdgListeCommandeDvds.List[bdgListeCommandeDvds.Position];
-                /// la commande ne peux être relancée que si elle est en cours
+                
                 if (commandeDocument.Etapes == "en cours")
                 {
-                    /// envoi du statut "4" qui correspond à "en cours"
                     commandeDocument.Etapes = "4";
-                    /// envoi l'id de la commande selectionnée
                     commandeDocument.Id = (string)(dgvListeCommandeDvds.SelectedRows[0].Cells["id"].Value);
                     controle.UpdateEtapes(commandeDocument);
                     RemplirListeCommandeDvds();
@@ -1869,6 +1862,7 @@ namespace Mediatek86.vue
         /// Clique sur le bouton pour mettre la commande de dvd selectionnée au statut livrée
         /// Possible que si la commande est en cours ou relancée
         /// ajoute les exemplaires dans la table corresponsante
+        /// la commande peux être mise au statut livrée que si elle est en cours ou relancée
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1877,16 +1871,12 @@ namespace Mediatek86.vue
             if (dgvListeCommandeDvds.SelectedRows.Count > 0)
             {
                 CommandeDocument commandeDocument = (CommandeDocument)bdgListeCommandeDvds.List[bdgListeCommandeDvds.Position];
-                /// la commande peux être mise au statut livrée que si elle est en cours ou relancée
                 if (commandeDocument.Etapes == "en cours" || commandeDocument.Etapes == "relancée")
                 {
-                    /// envoi du statut "2" qui correspond à "en relancée"
                     commandeDocument.Etapes = "2";
-                    /// envoi l'id de la commande selectionnée
                     commandeDocument.Id = (string)(dgvListeCommandeDvds.SelectedRows[0].Cells["id"].Value);
                     controle.UpdateEtapes(commandeDocument);
 
-                    /// ajout des exemplaires dans la table correspondante
                     for (int k = 1; k <= commandeDocument.NbExemplaire; k++)
                     {
                         int numero = k;
@@ -1919,6 +1909,7 @@ namespace Mediatek86.vue
         }
         /// <summary>
         /// Clique sur le bouton pour mettre la commande de dvd selectionnée au statut réglée
+        /// la commande ne peux être notée réglée que si elle a été livrée
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1927,12 +1918,9 @@ namespace Mediatek86.vue
             if (dgvListeCommandeDvds.SelectedRows.Count > 0)
             {
                 CommandeDocument commandeDocument = (CommandeDocument)bdgListeCommandeDvds.List[bdgListeCommandeDvds.Position];
-                /// la commande ne peux être notée réglée que si elle a été livrée
                 if (commandeDocument.Etapes == "livrée")
                 {
-                    /// envoi du statut "3" qui correspond à "en reglée"
                     commandeDocument.Etapes = "3";
-                    /// envoi l'id de la commande selectionnée
                     commandeDocument.Id = (string)(dgvListeCommandeDvds.SelectedRows[0].Cells["id"].Value);
                     controle.UpdateEtapes(commandeDocument);
                     RemplirListeCommandeDvds();

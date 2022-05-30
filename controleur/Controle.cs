@@ -8,10 +8,13 @@ using System.Linq;
 
 namespace Mediatek86.controleur
 {
+    /// <summary>
+    /// Classe gérant la fenêtre d'authentification
+    /// </summary>
     public class Controle
     {
         /// <summary>
-        /// fenêtre d'authentification
+        /// Fenêtre d'authentification
         /// </summary>
         public FormAuthentification formAuthentification;
 
@@ -167,7 +170,7 @@ namespace Mediatek86.controleur
         /// Vérification si la suppression d'un abonnement est possible
         /// uniquement si l'abonnement n'est lié à aucun exemplaire
         /// </summary>
-        /// <param name="abonnement">Abonnement concerné</param>
+        /// <param name="abonnementRevue">Abonnement concerné</param>
         /// <returns>True si la suppression est possible</returns>
         public bool CheckSupprimerAbonnement(AbonnementRevue abonnementRevue)
         {
@@ -245,7 +248,7 @@ namespace Mediatek86.controleur
         /// <summary>
         /// Requête suppression abonnement
         /// </summary>
-        /// <param name="idAbonnement">L'identifiant de l'abonnement à supprimer</param>
+        /// <param name="idAbonnementRevue">L'identifiant de l'abonnement à supprimer</param>
         /// <returns>True si l'opération a réussi, sinon false</returns>
         public bool SupprimerAbonnement(string idAbonnementRevue)
         {

@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace Mediatek86.modele
 {
+    /// <summary>
+    /// Classe gérant les requêtes sql
+    /// </summary>
     public static class Dao
     {
 

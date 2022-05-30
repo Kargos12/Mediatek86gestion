@@ -6,12 +6,21 @@ using System.Threading.Tasks;
 
 namespace Mediatek86.dal
 {
+    /// <summary>
+    /// Classe gérant le profil des utilisateurs
+    /// </summary>
     public class ProfilUtilisateur
     {
-        private string id;
-        private string libelle;
+        private readonly string id;
+        private readonly string libelle;
 
+        /// <summary>
+        /// Id d'un profil utilisateur
+        /// </summary>
         public string Id { get => id; }
+        /// <summary>
+        /// Libellé d'un profil utilisateur
+        /// </summary>
         public string Libelle { get => libelle; }
 
         /// <summary>

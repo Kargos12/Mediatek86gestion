@@ -181,7 +181,7 @@ namespace Mediatek86.dal
         /// <summary>
         /// Retourne le service d'un utilisateur
         /// </summary>
-        /// <param name="utilisateur">Le nom d'utilisateur concerné</param>
+        /// <param name="identifiant">Le nom d'utilisateur concerné</param>
         /// <param name="motdepasse">Le mot de passe de l'utilisateur</param>
         /// <returns>Le service si l'utilisateur est trouvé dans la bdd, sinon null</returns>
         public static ProfilUtilisateur Authentification(string identifiant, string motdepasse)

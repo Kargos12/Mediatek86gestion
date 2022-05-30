@@ -14,6 +14,9 @@ namespace Mediatek86.vue
 {
     public partial class FrmAlerteAbonnements : Form
     {
+        /// <summary>
+        /// Classe gérant l'alerte d'un abonnement arrivant à expiration
+        /// </summary>
         private Controle controle;
 
         
@@ -21,6 +24,9 @@ namespace Mediatek86.vue
 
         private readonly List<FinAbonnement> lesFinAbonnement;
 
+        /// <summary>
+        /// forme affichant l'alerte sur les abonnments arrivant à expiration
+        /// </summary>
         public FrmAlerteAbonnements()
         {
             InitializeComponent();
